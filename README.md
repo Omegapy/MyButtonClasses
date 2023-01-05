@@ -2,12 +2,12 @@
 
 						My Button Classes
 
+Button classes in c++ with the raylib library.
+
 Alejandro (Alex) Ricciardi
 created date: 01/05/2023
 Initialized with MyRaylibTemplate
 https://github.com/Omegapy/MyRaylibTemplate
-                                                 
-Button classes in c++ with the raylib library.
 
 -----------------------------------------------------------------------------------------------------------------------------
 Requirements:
