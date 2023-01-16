@@ -12,9 +12,15 @@
     <ClInclude Include="header.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ButtonS.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

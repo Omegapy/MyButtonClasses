@@ -39,7 +39,7 @@ Raylib library: https://www.raylib.com
  ---------------------------------****************************************---------------------------------*/
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "raylib.h"
+#include "ButtonS.hpp"
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -100,8 +100,8 @@ int main()
     // Initialization Window, OpenGL context, Texture Loads need to be call after this point 
     //--------------------------------------------------------------------------------------
     // 
-    // Enable config flags for resizable window and vertical synchro if used
-
+    // Enable config flags for resizable window and vertical synchro
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(screenWidth, screenHeight, "My Button Classes");
 
 
@@ -126,7 +126,10 @@ int main()
     //--------------------------------------------------------------------------------------
 
     // Font
-    //-------------------------------------------------------------------------------------- 
+    //--------------------------------------------------------------------------------------
+    // 
+    Font font1 = LoadFont("resources/font/monofonto.otf");
+    Font font2 = LoadFont("resources/font/segoeui.ttf");
 
                                     ////////////////////////////////////////////////// 
                                     /*-----------------------------------------------
@@ -150,8 +153,9 @@ int main()
     //---------------------------------------------- comment type-2 -------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    
+    ButtonS btn;
+    ButtonS btn2("Button", 100, 225, font1);
+    ButtonS btn3("Button", 100, 300, font2);
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -159,7 +163,7 @@ int main()
 
         // Update
         //-------------------------------------------------------------------------------------- 
-
+        //btn.update();
         
 
 
@@ -178,7 +182,11 @@ int main()
 
         BeginDrawing();
 
-       
+            ClearBackground(WHITE);
+
+            btn.draw();
+            btn2.draw();
+            btn3.draw();
 
         EndDrawing();
 
