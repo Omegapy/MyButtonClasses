@@ -232,9 +232,26 @@ ButtonS::ButtonS(string text, float x, float y, Font font, float font_size, Colo
     Updates button
 
  -----------------------------------------------------*/
-void ButtonS::update() 
+void ButtonS::update()
 {
-  
+    //Mouse position
+    Vector2 mouse_pos = GetMousePosition();
+
+    if (CheckCollisionPointRec(mouse_pos, rec))
+    {
+        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+        {
+            btn_color = btn_pressed;
+        } 
+        else
+        {
+            btn_color = btn_color_hover;
+        }
+    }
+    else
+    {
+        btn_color = btn_idle;
+    }
 }
 
 //--------------------------------------------------------------------- Function draw()
@@ -310,6 +327,13 @@ void ButtonS::build_btn(bool is_ray_font)
     //---- Button border  
     border = rec;
 }
+
+//--------------------------------------------------------------------- 
+/*----------------------------------------------------------
+
+    
+
+ -----------------------------------------------------------*/
 
 
 

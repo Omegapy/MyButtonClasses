@@ -81,8 +81,11 @@ class ButtonS
     float btn_width = (text_size.x + 10 * one_char_size.x),
           btn_height = text_size.y * (float)(2.5 * (text_size.y / font_size));
     Rectangle rec{ 100, 100, btn_width, btn_height };
-    Color btn_color = Color{ 77, 182, 172, 100 };
-
+    // color
+    Color btn_color = Color{ 77, 182, 172, 100 },
+                      btn_color_hover = LIGHTGRAY,
+                      btn_pressed = Color{ 198, 255, 0, 100 },
+                      btn_idle = Color{ 77, 182, 172, 100 };
     //---- Button border  position, size, color, thickness
     /* 
         The boder size is computed from the font size and length of the text
@@ -253,6 +256,8 @@ private:
 
      -----------------------------------------------------------*/
     void build_btn(bool is_ray_font);
+
+    int hover();
     
 };
 #endif
