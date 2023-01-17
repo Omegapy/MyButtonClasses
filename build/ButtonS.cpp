@@ -234,7 +234,7 @@ ButtonS::ButtonS(string text, float x, float y, Font font, float font_size, Colo
  -----------------------------------------------------*/
 void ButtonS::update()
 {
-    //Mouse position
+    // Mouse position
     Vector2 mouse_pos = GetMousePosition();
 
     if (CheckCollisionPointRec(mouse_pos, rec))
@@ -245,12 +245,14 @@ void ButtonS::update()
         } 
         else
         {
-            btn_color = btn_color_hover;
+            btn_color = btn_hover;
+            border_color = border_hover;
         }
     }
     else
     {
         btn_color = btn_idle;
+        border_color = border_idle;
     }
 }
 
@@ -265,7 +267,7 @@ void ButtonS::draw()
     if (is_shadow) DrawRectangleRec(shadow, shadow_color);
     DrawRectangleRec(rec, btn_color);
     if (is_border) DrawRectangleLinesEx(border, border_thickness, border_color);
-    DrawTextEx(font, text.c_str(), text_pos, font_size, font_spacing, font_color); // Draw text using font and additional parameters
+    DrawTextEx(font, text.c_str(), text_pos, font_size, font_spacing, font_color); 
 }
 
 
@@ -301,8 +303,11 @@ void ButtonS::draw()
  -----------------------------------------------------------*/
 void ButtonS::build_btn(bool is_ray_font)
 {
-    float ratio_width = (is_ray_font) ? 10.0f : 7.0f;
-    float ratio_height = (is_ray_font) ? 2.5f : 1.5f;
+    font_spacing = 0;
+    float ratio_width = (is_ray_font) ? 3.5f : 4.0f,
+          ratio_height = (is_ray_font) ? 2.0f : 1.4f,
+          ratio_thickness = (is_ray_font) ? 30.0f : 35.0f;
+        
    
     //--- Button size
     /*
@@ -326,6 +331,11 @@ void ButtonS::build_btn(bool is_ray_font)
 
     //---- Button border  
     border = rec;
+    border_thickness = rec.x / ratio_thickness;
+
+    //---- Button shadow
+    float ratio_shadow_y = (is_ray_font) ? 1.0f : 7.0f;
+    shadow = { (float)floor((rec.x + rec.x * shadow_offset)), (float)(rec.y + rec.y * shadow_offset) - ratio_shadow_y , rec.width, rec.height };
 }
 
 //--------------------------------------------------------------------- 

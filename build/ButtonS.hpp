@@ -60,12 +60,12 @@ class ButtonS
     // variables (Private)
     //----------------------------------------------------------------------------------
   
-     //---- Font
+     //---- Font 
     Font font = GetFontDefault();
-    float font_size = 32,
+    float font_size = 24,
           font_spacing = 3.0f;
     Color font_color = BLACK;
-
+    
     //---- Text
     string text = "Button";
     Vector2 text_size = MeasureTextEx(font, text.c_str(), font_size, font_spacing),
@@ -78,14 +78,16 @@ class ButtonS
         See mutators to modify the button’s position, 
         the text’s position in the button, and the button’s size. 
     */
-    float btn_width = (text_size.x + 10 * one_char_size.x),
-          btn_height = text_size.y * (float)(2.5 * (text_size.y / font_size));
+    float btn_width = (text_size.x + 3.5f * one_char_size.x),
+          btn_height = text_size.y * (float)(2.0f * (text_size.y / font_size));
     Rectangle rec{ 100, 100, btn_width, btn_height };
     // color
-    Color btn_color = Color{ 77, 182, 172, 100 },
-                      btn_color_hover = LIGHTGRAY,
-                      btn_pressed = Color{ 198, 255, 0, 100 },
-                      btn_idle = Color{ 77, 182, 172, 100 };
+    Color btn_color = LIGHTGRAY,
+                      // Botton state
+                      btn_hover = Color{ 66, 165, 245, 100 },
+                      btn_pressed = Color{ 135, 195, 74, 100 },
+                      btn_idle = btn_color;
+
     //---- Button border  position, size, color, thickness
     /* 
         The boder size is computed from the font size and length of the text
@@ -93,8 +95,13 @@ class ButtonS
         See mutators for modifying specifically the shadow's size.
     */
     Rectangle border{ rec.x, rec.y, btn_width, btn_height };
-    Color border_color = Color{ 0, 188, 212, 255 };
-    float border_thickness = 2;
+    // color
+    Color border_color = BLACK,
+        // Botton state
+        border_hover = Color{ 57, 73, 171, 100 },
+        border_pressed = Color{ 0, 105, 92, 100 },
+        border_idle = border_color;
+    float border_thickness = rec.x / 30;
     bool is_border = true;
 
     //---- Shaddow
@@ -103,10 +110,10 @@ class ButtonS
         odifying the button's size, we also modify the shadow's size.
         See mutators for modifying specifically the shadow's size and position.
     */
-    double shadow_offset = 0.04;
+    double shadow_offset = 0.05;
     Rectangle shadow{ (float)(rec.x + rec.x * shadow_offset), (float)(rec.y + rec.y * shadow_offset), btn_width, btn_height };
     Color shadow_color = Color{ 0, 0, 0, 25 };
-    bool is_shadow = false;
+    bool is_shadow = true;
 
     //--- Centers text in button
     /*
@@ -257,7 +264,7 @@ private:
      -----------------------------------------------------------*/
     void build_btn(bool is_ray_font);
 
-    int hover();
+    
     
 };
 #endif

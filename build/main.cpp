@@ -153,7 +153,7 @@ int main()
     //---------------------------------------------- comment type-2 -------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ButtonS btn;
+    ButtonS btn1;
     ButtonS btn2("Button", 100, 225, font1);
     ButtonS btn3("Button", 100, 300, font2);
     // Main game loop
@@ -163,7 +163,9 @@ int main()
 
         // Update
         //-------------------------------------------------------------------------------------- 
-        btn.update();
+        btn1.update();
+        btn2.update();
+        btn3.update();
         
 
 
@@ -184,7 +186,7 @@ int main()
 
             ClearBackground(WHITE);
 
-            btn.draw();
+            btn1.draw();
             btn2.draw();
             btn3.draw();
 
