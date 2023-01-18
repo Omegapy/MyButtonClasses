@@ -154,6 +154,13 @@ int main()
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ButtonS btn1;
+    //btn1.mod_is_shadow(false);
+    //btn1.mod_is_border(false);
+    //btn1.mod_text("Continue");
+    //btn1.mod_text_no_resize("up");
+    //btn1.mod_font_size(24);
+    //btn1.mod_font_size_no_resize(34);
+
     ButtonS btn2("Button", 100, 225, font1);
     ButtonS btn3("Button", 100, 300, font2);
     // Main game loop

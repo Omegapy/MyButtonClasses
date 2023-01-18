@@ -50,7 +50,6 @@ using namespace std;
 //--------------------------------------------- Class <name> ---------------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const enum {IS_RAY_FONT = true, IS_NOT_RAY_FONT = false};
 
 class ButtonS
 {
@@ -62,10 +61,11 @@ class ButtonS
   
      //---- Font 
     Font font = GetFontDefault();
-    float font_size = 24,
+    float font_size = 32,
           font_spacing = 3.0f;
     Color font_color = BLACK;
-    
+    bool is_ray_font = true;
+
     //---- Text
     string text = "Button";
     Vector2 text_size = MeasureTextEx(font, text.c_str(), font_size, font_spacing),
@@ -78,6 +78,7 @@ class ButtonS
         See mutators to modify the button’s position, 
         the text’s position in the button, and the button’s size. 
     */
+    bool resize_btn = true;
     float btn_width = (text_size.x + 3.5f * one_char_size.x),
           btn_height = text_size.y * (float)(2.0f * (text_size.y / font_size));
     Rectangle rec{ 100, 100, btn_width, btn_height };
@@ -189,7 +190,7 @@ public:
         text, position, font 
 
      ----------------------------------------------------*/
-    ButtonS(string text, float x, float y, Font font);
+    ButtonS(string text, float x, float y, Font &font);
 
     /*---------------------------------------------------
 
@@ -198,7 +199,7 @@ public:
         text, position, font, font size
 
      ----------------------------------------------------*/
-    ButtonS(string text, float x, float y, Font font, float font_size);
+    ButtonS(string text, float x, float y, Font &font, float font_size);
 
     /*---------------------------------------------------
 
@@ -208,7 +209,7 @@ public:
         button color
 
      ----------------------------------------------------*/
-    ButtonS(string text, float x, float y, Font font, float font_size, Color font_color, Color btn_color);
+    ButtonS(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color);
 
     /*---------------------------------------------------
 
@@ -218,7 +219,7 @@ public:
         button color, border color
 
      ----------------------------------------------------*/
-    ButtonS(string text, float x, float y, Font font, float font_size, Color font_color, Color btn_color, Color border_color);
+    ButtonS(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color, Color border_color);
 
 
     //----------------------------------------------------------------------------------
@@ -227,14 +228,6 @@ public:
     // Accessors Functions
     //----------------------------------------------------------------------------------
 
-
-    /*----------------------------------------------------
-
-        Updates button
-
-     -----------------------------------------------------*/
-    void update();
-
     /*----------------------------------------------------
 
         draw button
@@ -242,11 +235,73 @@ public:
      -----------------------------------------------------*/
     void draw();
 
+
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
     // Mutators Functions
     //---------------------------------------------------------------------------------
+
+    /*----------------------------------------------------
+
+        Updates button
+
+     -----------------------------------------------------*/
+    int update();
+
+    /*----------------------------------------------------
+
+         Modifies is border
+         True adds a border
+         False removes border
+
+     -----------------------------------------------------*/
+    void mod_is_border(bool is_border);
+
+    /*----------------------------------------------------
+
+         Modifies is shadow and
+         True adds a shadow
+         False removes shadow
+
+     -----------------------------------------------------*/
+    void ButtonS::mod_is_shadow(bool is_shadow);
+
+    /*----------------------------------------------------
+
+        Modifies font size and
+        Resizes button to fit text
+        Takes a string
+
+     -----------------------------------------------------*/
+    void mod_font_size(float font_size);
+
+    /*----------------------------------------------------
+
+        Modifies font size and
+        does NOT resizes button to fit text
+        Takes a string
+
+     -----------------------------------------------------*/
+    void mod_font_size_no_resize(float font_size);
+
+    /*----------------------------------------------------
+
+         Modifies text and
+         Resizes button to fit text
+         Takes a string
+
+     -----------------------------------------------------*/
+    void mod_text(string text);
+
+    /*----------------------------------------------------
+
+         Modifies text and
+         does NOT resizes button to fit text
+         Takes a string
+
+     -----------------------------------------------------*/
+    void mod_text_no_resize(string text);
 
 private:
 
@@ -262,9 +317,7 @@ private:
         computes size from the font size and length of the text
 
      -----------------------------------------------------------*/
-    void build_btn(bool is_ray_font);
-
-    
+    void build_btn();
     
 };
 #endif
