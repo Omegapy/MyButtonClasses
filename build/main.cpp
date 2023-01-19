@@ -20,9 +20,7 @@ created date: 01/03/ 2023
 This project is about creating a button class in c++ with the raylib library.
 
 Requirement
-c and c++ 11 or later
-MS Windows 10 or later
-MS. Visual Studio
+c and c++ 20 or later
 Raylib library: https://www.raylib.com
 
 ****** Please see the README.txt file for more information about this project **********
@@ -39,7 +37,7 @@ Raylib library: https://www.raylib.com
  ---------------------------------****************************************---------------------------------*/
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "ButtonS.hpp"
+#include "ButtonR.hpp"
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,16 +144,18 @@ int main()
     //---------------------------------------------- comment type-2 -------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ButtonS btn1;
+    ButtonR btn1;
     //btn1.mod_is_shadow(false);
+    btn1.mod_button_color(PURPLE);
+    btn1.mod_border_thickness(30);
     //btn1.mod_is_border(false);
     //btn1.mod_text("Continue");
     //btn1.mod_text_no_resize("up");
     //btn1.mod_font_size(24);
     //btn1.mod_font_size_no_resize(34);
 
-    ButtonS btn2("Button", 100, 225, font1);
-    ButtonS btn3("Button", 100, 300, font2);
+    ButtonR btn2("Button", 100, 225, font1);
+    ButtonR btn3("Button", 100, 300, font2);
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {

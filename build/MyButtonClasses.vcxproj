@@ -168,11 +168,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ButtonS.hpp" />
+    <ClInclude Include="ButtonR.hpp" />
     <ClInclude Include="header.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ButtonS.cpp" />
+    <ClCompile Include="ButtonR.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

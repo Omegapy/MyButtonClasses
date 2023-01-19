@@ -12,7 +12,7 @@
     <ClInclude Include="header.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonS.hpp">
+    <ClInclude Include="ButtonR.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -20,7 +20,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonS.cpp">
+    <ClCompile Include="ButtonR.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
