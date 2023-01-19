@@ -2,7 +2,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
  /*--------------------------------****************************************----------------------------------
   |                                *                                      *                                 |
-  |  Program ButtonR Class         *       ButtonR Class Declarations     *                                 |
+  |  Program Button Class         *       ButtonR Class Declarations     *                                 |
   |                                *                                      *                                 |
   ---------------------------------****************************************----------------------------------*/
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,11 +28,18 @@
     See mutators for modifying specifically the shadow's size and position.
 
     The default font is raylib font.
+
+    Parent class to the ButtonO class 
+
+    Requirement
+    c and c++ 20 or later
+    Raylib library: https://www.raylib.com
+
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef BUTTON_S_HPP
-#define BUTTON_S_HPP
+#ifndef BUTTON_R_HPP
+#define BUTTON_R_HPP
 
 #ifdef _MSC_VER
 #pragma once
@@ -53,12 +60,28 @@ using namespace std;
 
 class ButtonR
 {
+
+
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
     // variables (Private)
     //----------------------------------------------------------------------------------
   
+
+    
+public:
+
+
+
+    //----------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
+
+    // variables (Public)
+    //----------------------------------------------------------------------------------
+    
+
+
      //---- Font 
     Font font = GetFontDefault();
     float font_size = 32,
@@ -70,39 +93,38 @@ class ButtonR
     string text = "Button";
     Vector2 text_size = MeasureTextEx(font, text.c_str(), font_size, font_spacing),
             one_char_size = MeasureTextEx(font, "C", font_size, font_spacing);
-    
 
     //--- Button position, size, color
-    /* 
+    /*
         The button size is computed from the font size and length of the text
-        See mutators to modify the button’s position, 
-        the text’s position in the button, and the button’s size. 
+        See mutators to modify the button’s position,
+        the text’s position in the button, and the button’s size.
     */
     bool resize_btn = true;
     float btn_width = (text_size.x + 3.5f * one_char_size.x),
           btn_height = text_size.y * (float)(2.0f * (text_size.y / font_size));
     Rectangle rec{ 100, 100, btn_width, btn_height };
-    // color
-    Color btn_color = { 222, 214, 202, 255 },
-                      // Botton state
-                      btn_hover = { 135, 195, 74, 100 },
-                      btn_pressed = { 66, 165, 245, 100 },
-                      btn_idle = btn_color;
+    // colors
+    Color btn_live_color = { 222, 214, 202, 255 },
+    // Botton state
+          btn_hover = { 135, 195, 74, 100 },
+          btn_pressed = { 66, 165, 245, 100 },
+          btn_color = btn_live_color; // idle state
 
     //---- Button border  position, size, color, thickness
-    /* 
+    /*
         The boder size is computed from the font size and length of the text
         modifying the button's size, we also modify the border's size.
         See mutators for modifying specifically the shadow's size.
     */
     Rectangle border{ rec.x, rec.y, btn_width, btn_height };
     // color
-    Color border_color = BLACK,
-        // Botton state
-        border_hover = { 57, 73, 171, 100 },
-        border_pressed = { 0, 105, 92, 100 },
-        border_idle = border_color;
-    float border_thickness = rec.x / 30;
+    Color border_live_color = BLACK,
+    // Botton state
+          border_hover = { 57, 73, 171, 100 },
+          border_pressed = { 0, 105, 92, 100 },
+          border_color = border_live_color; // idle state
+    float border_thickness = (rec.width + rec.height) / 150;
     bool is_border = true;
 
     //---- Shaddow
@@ -112,7 +134,7 @@ class ButtonR
         See mutators for modifying specifically the shadow's size and position.
     */
     double shadow_offset = 0.05;
-    Rectangle shadow{ (float)(rec.x + rec.x * shadow_offset), (float)(rec.y + rec.y * shadow_offset), btn_width, btn_height };
+    Rectangle shadow{ rec.x + 5,  rec.y + 5, btn_width, btn_height };
     Color shadow_color = LIGHTGRAY;
     bool is_shadow = true;
 
@@ -126,14 +148,13 @@ class ButtonR
         rec.y + (rec.height - text_size.y) / 2
     };
 
-    
-public:
 
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
-    // variables (Public)
-    //----------------------------------------------------------------------------------
+    // Constructors
+    //---------------------------------------------------------------------------------
+
 
     /*---------------------------------------------------
 
@@ -228,12 +249,14 @@ public:
     // Accessors Functions
     //----------------------------------------------------------------------------------
 
+
     /*----------------------------------------------------
 
         draw button
+        Not inherited by child classes
 
      -----------------------------------------------------*/
-    void draw();
+    virtual void draw();
 
 
     //----------------------------------------------------------------------------------
@@ -242,30 +265,13 @@ public:
     // Mutators Functions
     //---------------------------------------------------------------------------------
 
+
     /*----------------------------------------------------
 
         Updates button
 
      -----------------------------------------------------*/
     int update();
-
-    /*----------------------------------------------------
-
-         Modifies is border
-         True adds a border
-         False removes border
-
-     -----------------------------------------------------*/
-    void mod_is_border(bool is_border);
-
-    /*----------------------------------------------------
-
-         Modifies is shadow and
-         True adds a shadow
-         False removes shadow
-
-     -----------------------------------------------------*/
-    void ButtonR::mod_is_shadow(bool is_shadow);
 
     /*----------------------------------------------------
 
@@ -303,71 +309,7 @@ public:
      -----------------------------------------------------*/
     void mod_text_no_resize(string text);
 
-    /*----------------------------------------------------
 
-        Modifies button color
-
-     -----------------------------------------------------*/
-    void mod_button_color(Color btn_color);
-
-    /*----------------------------------------------------
-
-        Modifies button hover color
-
-     -----------------------------------------------------*/
-    void mod_button_hover_color(Color btn_hover);
-
-    /*----------------------------------------------------
-
-        Modifies button pressed color
-
-     -----------------------------------------------------*/
-    void mod_button_pressed_color(Color btn_hover);
-
-    /*----------------------------------------------------
-
-        Modifies border color
-
-     -----------------------------------------------------*/
-    void mod_border_color(Color border_color);
-
-    /*----------------------------------------------------
-
-        Modifies border hover color
-
-     -----------------------------------------------------*/
-    void mod_border_hover_color(Color border_hover);
-
-    /*----------------------------------------------------
-
-        Modifies border pressed color
-
-     -----------------------------------------------------*/
-    void mod_border_pressed_color(Color border_hover);
-
-    /*----------------------------------------------------
-
-        Modifies border thickness color
-
-     -----------------------------------------------------*/
-    void mod_border_thickness(float border_thickness);
-
-    /*----------------------------------------------------
-
-        Modifies shadow color
-
-     -----------------------------------------------------*/
-    void mod_shadow_color(Color shadow_color);
-
-
-private:
-
-    //----------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------
-
-    // Classe Operation Functions (private)
-    //---------------------------------------------------------------------------------
-    
     /*----------------------------------------------------------
 
         Builds the botton,
@@ -375,6 +317,20 @@ private:
 
      -----------------------------------------------------------*/
     void build_btn();
+
+   
+
+private:
+
+
+    //----------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
+
+    // Classe Operation Functions (private)
+    //---------------------------------------------------------------------------------
+
+    
+
     
 };
 #endif

@@ -38,7 +38,7 @@ Raylib library: https://www.raylib.com
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "ButtonR.hpp"
-
+#include "ButtonO.hpp"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------****************************************----------------------------------
@@ -145,17 +145,34 @@ int main()
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ButtonR btn1;
-    //btn1.mod_is_shadow(false);
-    btn1.mod_button_color(PURPLE);
-    btn1.mod_border_thickness(30);
-    //btn1.mod_is_border(false);
-    //btn1.mod_text("Continue");
+    //btn1.is_shadow = false;
+    //btn1.btn_color = PURPLE; // button idle
+    //btn1. border_thickness = 4;
+    //btn1.is_border = false;
+    //btn1.mod_text_no_resize ("Continue");
     //btn1.mod_text_no_resize("up");
     //btn1.mod_font_size(24);
     //btn1.mod_font_size_no_resize(34);
 
     ButtonR btn2("Button", 100, 225, font1);
+    //btn2.is_shadow = false;
     ButtonR btn3("Button", 100, 300, font2);
+
+
+    ButtonO btn4("Button", 450, 100);
+    //btn4.is_shadow = false;
+    //btn4.btn_color = PURPLE; // button idle
+    //btn4.border_thickness = 4;
+    //btn4.is_border = false;
+    //btn4.mod_text_no_resize("Continue");
+    //btn4.mod_text_no_resize("up");
+    //btn4.mod_font_size(24);
+    //btn4.mod_font_size_no_resize(34);
+
+    ButtonO btn5("Button",450, 225, font1);
+    ButtonO btn6("Button", 450, 300, font2);
+
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -163,19 +180,8 @@ int main()
 
         // Update
         //-------------------------------------------------------------------------------------- 
-        btn1.update();
-        btn2.update();
-        btn3.update();
         
-
-
-                                        //////////////////////////////////////////////////
-                                       /*-----------------------------------------------
-                                        |                                              |
-                                        |           Game Instance Rendering            |
-                                        |                                              |
-                                        -----------------------------------------------*/
-                                        //////////////////////////////////////////////////
+        
                                          
         //----------------------------------------------------------------------------------
 
@@ -189,6 +195,10 @@ int main()
             btn1.draw();
             btn2.draw();
             btn3.draw();
+
+            btn4.draw();
+            btn5.draw();
+            btn6.draw();
 
         EndDrawing();
 
