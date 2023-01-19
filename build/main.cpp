@@ -147,7 +147,7 @@ int main()
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ButtonS btn1;
-    btn1.mod_is_shadow(false);
+    //btn1.mod_is_shadow(false);
     //btn1.mod_is_border(false);
     //btn1.mod_text("Continue");
     //btn1.mod_text_no_resize("up");
