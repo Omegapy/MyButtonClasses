@@ -301,8 +301,8 @@ int ButtonR::update()
     else
     {
         // state idle
-        btn_live_color = btn_color;
-        border_live_color = border_color;
+        btn_live_color = btn_idle;
+        border_live_color = border_idle;
     }
 
     return result;
@@ -378,13 +378,6 @@ void ButtonR::mod_text_no_resize(string text)
 }
 
 
-//----------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------
-
-// Class Methods Operations (private)
-//---------------------------------------------------------------------------------
-
-
 //--------------------------------------------------------------------- Method build_btn()
 /*----------------------------------------------------------
 
@@ -394,7 +387,6 @@ void ButtonR::mod_text_no_resize(string text)
  -----------------------------------------------------------*/
 void ButtonR::build_btn()
 {
-    font_spacing = 2;
     float ratio_width = (is_ray_font) ? 3.5f : 4.0f,
           ratio_height = (is_ray_font) ? 2.0f : 1.4f;     
    
@@ -424,14 +416,17 @@ void ButtonR::build_btn()
     border_thickness = (rec.width + rec.height) / 150;
     
     //---- Button shadow
-    float ratio_shadow_y = (is_ray_font) ? 1.0f : 7.0f;
     shadow = { rec.x + 5,  rec.y + 5, rec.width, rec.height };
 
     
 }
 
 
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
 
+// Class Methods Operations (private)
+//---------------------------------------------------------------------------------
 
 
 

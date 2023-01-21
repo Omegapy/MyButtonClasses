@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 
-    The ButtonR class creates a rectangle shaped static-size button, window-resized-not-responsive button.
+    The ButtonR class creates a rounded edges rectangle shaped static-size button, window-resized-not-responsive button.
 
     The button size is computed from the font size and length of the text;
     the text is automatically centered on the button.
@@ -28,11 +28,7 @@
 
     The default font is raylib font.
 
-    Requirement
-    c and c++ 20 or later
-    Raylib library: https://www.raylib.com
-
-
+     Child class of ButtonR class
 
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,8 +92,8 @@ ButtonO::ButtonO(string text, float x, float y, float font_size)
     rec.x = x;
     rec.y = y;
     this->font_size = font_size;
-    btn_live_color = btn_color;
-    border_live_color = border_color;
+    btn_live_color = btn_idle;
+    border_live_color = border_idle;
 
     ButtonR::build_btn();
 }

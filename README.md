@@ -34,3 +34,6 @@ GitHub: https://github.com/Omegapy
 
 YouTube: https://www.youtube.com/@omegapy (new)
 
+
+<a href='https://pngtree.com/so/icons'>icons png from pngtree.com/</a>
+

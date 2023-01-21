@@ -109,7 +109,7 @@ public:
     // Botton state
           btn_hover = { 135, 195, 74, 100 },
           btn_pressed = { 66, 165, 245, 100 },
-          btn_color = btn_live_color; // idle state
+          btn_idle = btn_live_color; // idle state
 
     //---- Button border  position, size, color, thickness
     /*
@@ -123,7 +123,7 @@ public:
     // Botton state
           border_hover = { 57, 73, 171, 100 },
           border_pressed = { 0, 105, 92, 100 },
-          border_color = border_live_color; // idle state
+          border_idle = border_live_color; 
     float border_thickness = (rec.width + rec.height) / 150;
     bool is_border = true;
 
@@ -139,9 +139,6 @@ public:
     bool is_shadow = true;
 
     //--- Centers text in button
-    /*
-        See mutators to change text's position in button
-    */
     Vector2 text_pos =
     {
         rec.x + (rec.width - text_size.x) / 2,

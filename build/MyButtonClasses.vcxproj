@@ -169,11 +169,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ButtonO.hpp" />
+    <ClInclude Include="ButtonP.hpp" />
     <ClInclude Include="ButtonR.hpp" />
     <ClInclude Include="header.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonO.cpp" />
+    <ClCompile Include="ButtonP.cpp" />
     <ClCompile Include="ButtonR.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

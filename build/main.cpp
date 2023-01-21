@@ -39,6 +39,7 @@ Raylib library: https://www.raylib.com
 
 #include "ButtonR.hpp"
 #include "ButtonO.hpp"
+#include "ButtonP.hpp"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------****************************************----------------------------------
@@ -90,7 +91,7 @@ int main()
 
     // variables
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
+    const int screenWidth = 1100;
     const int screenHeight = 450;
 
     //--------------------------------------------------------------------------------------
@@ -126,8 +127,8 @@ int main()
     // Font
     //--------------------------------------------------------------------------------------
     // 
-    Font font1 = LoadFont("resources/font/monofonto.otf");
-    Font font2 = LoadFont("resources/font/segoeui.ttf");
+    Font font1 = LoadFont("resources/fonts/monofonto.otf");
+    Font font2 = LoadFont("resources/fonts/segoeui.ttf");
 
                                      
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -144,6 +145,9 @@ int main()
     //---------------------------------------------- comment type-2 -------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+    //------ Rectangle buttons
     ButtonR btn1;
     //btn1.is_shadow = false;
     //btn1.btn_color = PURPLE; // button idle
@@ -159,6 +163,7 @@ int main()
     ButtonR btn3("Button", 100, 300, font2);
 
 
+    //------- Rounded rectangle buttons
     ButtonO btn4("Button", 450, 100);
     //btn4.is_shadow = false;
     //btn4.btn_color = PURPLE; // button idle
@@ -172,7 +177,10 @@ int main()
     ButtonO btn5("Button",450, 225, font1);
     ButtonO btn6("Button", 450, 300, font2);
 
-
+    //------- Images buttons
+    ButtonP btn7;
+    
+    
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -199,6 +207,8 @@ int main()
             btn4.draw();
             btn5.draw();
             btn6.draw();
+
+            btn7.draw();
 
         EndDrawing();
 
