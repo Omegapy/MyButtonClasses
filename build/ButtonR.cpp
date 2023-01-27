@@ -68,16 +68,17 @@ ButtonR::ButtonR()
 /*---------------------------------------------------
 
     constructor-1 
+    - raylib default font
     text, position
 
  ----------------------------------------------------*/
 ButtonR::ButtonR(string text, float x, float y)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
 
-    build_btn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-2
@@ -90,14 +91,14 @@ ButtonR::ButtonR(string text, float x, float y)
     Note: the font size will modify the size of the button
 
  -------------------------------------------------------------*/
-ButtonR::ButtonR(string text, float x, float y, float font_size)
+ButtonR::ButtonR(string text, float x, float y, float fontSize)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
-    this->font_size = font_size;
+    rect.x = x;
+    rect.y = y;
+    this->fontSize = fontSize;
    
-    build_btn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-3
@@ -109,16 +110,16 @@ ButtonR::ButtonR(string text, float x, float y, float font_size)
     button color
 
  ----------------------------------------------------*/
-ButtonR::ButtonR(string text, float x, float y, float font_size, Color font_color, Color btn_color)
+ButtonR::ButtonR(string text, float x, float y, float fontSize, Color fontColor, Color btnColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
-    this->font_size = font_size;
-    this->font_color = font_color;
-    this->btn_live_color = btn_color;
+    rect.x = x;
+    rect.y = y;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
 
-    build_btn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-4
@@ -130,17 +131,17 @@ ButtonR::ButtonR(string text, float x, float y, float font_size, Color font_colo
     button color, border color
 
  ----------------------------------------------------*/
-ButtonR::ButtonR(string text, float x, float y, float font_size, Color font_color, Color btn_color, Color border_color)
+ButtonR::ButtonR(string text, float x, float y, float fontSize, Color fontColor, Color btnColor, Color borderColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
-    this->font_size = font_size;
-    this->font_color = font_color;
-    this->btn_live_color = btn_color;
-    this->border_live_color = border_color;
+    rect.x = x;
+    rect.y = y;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
+    borderIdle = borderColor;
 
-    build_btn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-5
@@ -154,12 +155,13 @@ ButtonR::ButtonR(string text, float x, float y, float font_size, Color font_colo
 ButtonR::ButtonR(string text, float x, float y, Font &font)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    is_ray_font = false;
+
+    isRayFont = false;
     
-    build_btn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-6
@@ -170,16 +172,17 @@ ButtonR::ButtonR(string text, float x, float y, Font &font)
     text, position, font, font size
 
  ----------------------------------------------------*/
-ButtonR::ButtonR(string text, float x, float y, Font &font, float font_size)
+ButtonR::ButtonR(string text, float x, float y, Font &font, float fontSize)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    this->font_size = font_size;
-    is_ray_font = false;
+    this->fontSize = fontSize;
 
-    build_btn();
+    isRayFont = false;
+
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-7
@@ -191,18 +194,19 @@ ButtonR::ButtonR(string text, float x, float y, Font &font, float font_size)
     button color
 
  ----------------------------------------------------*/
-ButtonR::ButtonR(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color)
+ButtonR::ButtonR(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    this->font_size = font_size;
-    this->btn_live_color = btn_color;
-    this->font_color = font_color;
-    is_ray_font = false;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
+
+    isRayFont = false;
     
-    build_btn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-8
@@ -214,19 +218,20 @@ ButtonR::ButtonR(string text, float x, float y, Font &font, float font_size, Col
     button color, border color
 
  ----------------------------------------------------*/
-ButtonR::ButtonR(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color, Color border_color)
+ButtonR::ButtonR(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor, Color borderColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    this->font_size = font_size;
-    this->btn_live_color = btn_color;
-    this->font_color = font_color;
-    this->border_live_color = border_color;
-    is_ray_font = false;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
+    borderIdle = borderColor;
 
-    build_btn();
+    isRayFont = false;
+
+    buildBtn();
 }
 
 //----------------------------------------------------------------------------------
@@ -245,10 +250,10 @@ void ButtonR::draw()
 {
     update();
 
-    if (is_shadow) DrawRectangleRec(shadow, shadow_color);
-    DrawRectangleRec(rec, btn_live_color);
-    if (is_border) DrawRectangleLinesEx(border, border_thickness, border_live_color);
-    DrawTextEx(font, text.c_str(), text_pos, font_size, font_spacing, font_color); 
+    if (isShadow) DrawRectangleRec(shadow, shadowColor);
+    DrawRectangleRec(rect, btnLiveColor);
+    if (isBorder) DrawRectangleLinesEx(border, borderThickness, borderLiveColor);
+    DrawTextEx(font, text.c_str(), text_pos, fontSize, fontSpacing, fontColor); 
 
 }
 
@@ -272,37 +277,37 @@ int ButtonR::update()
     // Mouse position
     Vector2 mouse_pos = GetMousePosition();
 
-    if (CheckCollisionPointRec(mouse_pos, rec))
+    if (CheckCollisionPointRec(mouse_pos, rect))
     {
         if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
         {
-            btn_live_color = btn_pressed;
-            border_live_color = border_pressed;
+            btnLiveColor = btnPressed;
+            borderLiveColor = borderPressed;
             result = MOUSE_BUTTON_LEFT;
         }
         else if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
         {
-            btn_live_color = btn_pressed;
-            border_live_color = border_pressed;
+            btnLiveColor = btnPressed;
+            borderLiveColor = borderPressed;
             result = MOUSE_BUTTON_RIGHT;
         }
         else if (IsMouseButtonDown(MOUSE_BUTTON_MIDDLE))
         {
-            btn_live_color = btn_pressed;
-            border_live_color = border_pressed;
+            btnLiveColor = btnPressed;
+            borderLiveColor = borderPressed;
             result = MOUSE_BUTTON_MIDDLE;
         }
         else
         {
-            btn_live_color = btn_hover;
-            border_live_color = border_hover;
+            btnLiveColor = btnHover;
+            borderLiveColor = borderHover;
         }
     }
     else
     {
         // state idle
-        btn_live_color = btn_idle;
-        border_live_color = border_idle;
+        btnLiveColor = btnIdle;
+        borderLiveColor = borderIdle;
     }
 
     return result;
@@ -317,110 +322,120 @@ int ButtonR::update()
 //---------------------------------------------------------------------------------
 
 
-//--------------------------------------------------------------------- Method mod_font_size()
-/*----------------------------------------------------
-
-     Modifies font size and
-     Resizes button to fit text
-     Takes a string
-
- -----------------------------------------------------*/
-void ButtonR::mod_font_size(float font_size)
-{
-    this->font_size = font_size;
-    resize_btn = true;
-    build_btn();
-}
-
-//--------------------------------------------------------------------- Method mod_font_size_no_resize()
-/*----------------------------------------------------
-
-     Modifies font size and
-     does NOT resizes button to fit text
-     Takes a string
-
- -----------------------------------------------------*/
-void ButtonR::mod_font_size_no_resize(float font_size)
-{
-    this->font_size = font_size;
-    resize_btn = false;
-    build_btn();
-}
-
-//--------------------------------------------------------------------- Method mod_text()
-/*----------------------------------------------------
-
-     Modifies text and
-     Resizes button to fit text
-     Takes a string
-
- -----------------------------------------------------*/
-void ButtonR::mod_text(string text) 
-{
-    this->text = text;
-    resize_btn = true;
-    build_btn();
-}
-
-//--------------------------------------------------------------------- Method mod_text_no_resize()
-/*----------------------------------------------------
-
-     Modifies text and 
-     does NOT resizes button to fit text
-     Takes a string
-
- -----------------------------------------------------*/
-void ButtonR::mod_text_no_resize(string text) 
-{
-    this->text = text;
-    resize_btn = false;
-    build_btn();
-}
-
-
-//--------------------------------------------------------------------- Method build_btn()
+//--------------------------------------------------------------------- Method buildBtn()
 /*----------------------------------------------------------
 
-    Builds the botton, 
+    Builds the botton,
     computes size from the font size and length of the text
 
  -----------------------------------------------------------*/
-void ButtonR::build_btn()
+void ButtonR::buildBtn()
 {
-    float ratio_width = (is_ray_font) ? 3.5f : 4.0f,
-          ratio_height = (is_ray_font) ? 2.0f : 1.4f;     
-   
+    float ratioWidth = (isRayFont) ? 3.5f : 4.0f,
+          ratioHeight = (isRayFont) ? 2.0f : 1.4f;
+
     //--- Button size
     /*
         The button size is computed from the font size and length of the text
         See mutators to modify the button’s position,
         the text’s position in the button, and the button’s size.
     */
-    text_size = MeasureTextEx(font, text.c_str(), font_size, font_spacing);
-    one_char_size = MeasureTextEx(font, "C", font_size, font_spacing);
-    if (resize_btn)
+    textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing);
+    oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
+    if (resizeBtn)
     {
         //--- Button size
-        rec.width = (text_size.x + ratio_width * one_char_size.x);
-        rec.height = text_size.y * (float)(ratio_height * (text_size.y / font_size));
+        rect.width = (textSize.x + ratioWidth * oneCharSize.x);
+        rect.height = textSize.y * (float)(ratioHeight * (textSize.y / fontSize));
     }
     //--- Centers text in button
     text_pos =
     {
-        rec.x + (rec.width - text_size.x) / 2,
-        rec.y + (rec.height - text_size.y) / 2
+        rect.x + (rect.width - textSize.x) / 2,
+        rect.y + (rect.height - textSize.y) / 2
     };
 
     //---- Button border  
-    border = rec;
-    border_thickness = (rec.width + rec.height) / 150;
-    
-    //---- Button shadow
-    shadow = { rec.x + 5,  rec.y + 5, rec.width, rec.height };
+    border = rect;
+    borderThickness = (rect.width + rect.height) / 150;
 
-    
+    //---- Button shadow
+    shadow = { rect.x + 5,  rect.y + 5, rect.width, rect.height };
+
+} // build_btn()
+
+//--------------------------------------------------------------------- Method setFontSize()
+/*----------------------------------------------------
+
+     Sets font size and
+     Resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonR::setFontSize(float fontSize)
+{
+    this->fontSize = fontSize;
+    resizeBtn = true;
+    buildBtn();
 }
 
+//--------------------------------------------------------------------- Method setFontSizeNoResize()
+/*----------------------------------------------------
+
+     Sets font size and
+     does NOT resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonR::setFontSizeNoResize(float fontSize)
+{
+    this->fontSize = fontSize;
+    resizeBtn = false;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setText()
+/*----------------------------------------------------
+
+     Sets text and
+     Resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonR::setText(string text) 
+{
+    this->text = text;
+    resizeBtn = true;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setTextNoResize()
+/*----------------------------------------------------
+
+     Sets text and 
+     does NOT resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonR::setTextNoResize(string text) 
+{
+    this->text = text;
+    resizeBtn = false;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setTextPosition()
+/*----------------------------------------------------
+
+     Sets text position
+     does NOT resizes button to fit text
+
+ -----------------------------------------------------*/
+void ButtonR::setTextPosition(float x, float y)
+{
+    text_pos.x = x;
+    text_pos.y = y;
+}
 
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------

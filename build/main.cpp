@@ -149,37 +149,40 @@ int main()
 
     //------ Rectangle buttons
     ButtonR btn1;
-    //btn1.is_shadow = false;
-    //btn1.btn_color = PURPLE; // button idle
-    //btn1. border_thickness = 4;
-    //btn1.is_border = false;
-    //btn1.mod_text_no_resize ("Continue");
-    //btn1.mod_text_no_resize("up");
-    //btn1.mod_font_size(24);
-    //btn1.mod_font_size_no_resize(34);
+    //btn1.isShadow = false;
+    //btn1.btnIdle = PURPLE; // button idle
+    //btn1. borderThickness = 4;
+    //btn1.isBorder = false;
+    //btn1.setText("Continue");
+    //btn1.setTextNoResize("up");
+    //btn1.setTextPosition(btn1.rect.x, btn1.rect.y);
+    //btn1.setFontSize(24);
+    //btn1.setFontSizeNoResize(34);
 
     ButtonR btn2("Button", 100, 225, font1);
-    //btn2.is_shadow = false;
+    //btn2.isShadow = false;
     ButtonR btn3("Button", 100, 300, font2);
 
 
     //------- Rounded rectangle buttons
     ButtonO btn4("Button", 450, 100);
-    //btn4.is_shadow = false;
-    //btn4.btn_color = PURPLE; // button idle
-    //btn4.border_thickness = 4;
-    //btn4.is_border = false;
-    //btn4.mod_text_no_resize("Continue");
-    //btn4.mod_text_no_resize("up");
-    //btn4.mod_font_size(24);
-    //btn4.mod_font_size_no_resize(34);
+    //btn4.isShadow = false;
+    //btn4.btnIdle = PURPLE; // button idle
+    //btn4.borderThickness = 4;
+    //btn4.isBorder = false;
+    //btn4.setText("Continue");
+    //btn4.setTextNoResize("up");
+    //btn4.setTextPosition(btn1.rect.x, btn1.rect.y);
+    //btn4.setFontSize(24);
+    //btn4.setFontSizeNoResize(34);
 
     ButtonO btn5("Button",450, 225, font1);
     ButtonO btn6("Button", 450, 300, font2);
 
     //------- Images buttons
     ButtonP btn7;
-    
+    ButtonP btn8("Button", 750, 225, "resources/images/button1.png", font1);
+    ButtonP btn9("Button", 750, 325, "resources/images/button1.png", font2);
     
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -198,7 +201,7 @@ int main()
 
         BeginDrawing();
 
-            ClearBackground(WHITE);
+            ClearBackground(BLACK);
 
             btn1.draw();
             btn2.draw();
@@ -209,6 +212,8 @@ int main()
             btn6.draw();
 
             btn7.draw();
+            btn8.draw();
+            btn9.draw();
 
         EndDrawing();
 

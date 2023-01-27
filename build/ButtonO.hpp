@@ -64,7 +64,6 @@ public:
     // Button rectangle rounded edges outline
     float roundness = 1.0f;
 
-
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
@@ -98,7 +97,7 @@ public:
         Note: the font size will modify the size of the button
 
      -------------------------------------------------------------*/
-    ButtonO(string text, float x, float y, float font_size);
+    ButtonO(string text, float x, float y, float fontSize);
 
     /*---------------------------------------------------
 
@@ -108,7 +107,7 @@ public:
         button color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, float font_size, Color font_color, Color btn_color);
+    ButtonO(string text, float x, float y, float fontSize, Color fontColor, Color btnColor);
 
     /*---------------------------------------------------
 
@@ -118,7 +117,7 @@ public:
         button color, border color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, float font_size, Color font_color, Color btn_color, Color border_color);
+    ButtonO(string text, float x, float y, float fontSize, Color fontColor, Color btnColor, Color borderColor);
 
     /*---------------------------------------------------
 
@@ -136,7 +135,7 @@ public:
         text, position, font, font size
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font, float font_size);
+    ButtonO(string text, float x, float y, Font &font, float fontSize);
 
     /*---------------------------------------------------
 
@@ -146,7 +145,7 @@ public:
         button color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color);
+    ButtonO(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor);
 
     /*---------------------------------------------------
 
@@ -156,7 +155,7 @@ public:
         button color, border color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color, Color border_color);
+    ButtonO(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor, Color borderColor);
 
 
     //----------------------------------------------------------------------------------

@@ -70,10 +70,10 @@ ButtonO::ButtonO()
 ButtonO::ButtonO(string text, float x, float y)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
 
-    ButtonR::build_btn();
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-2
@@ -86,16 +86,14 @@ ButtonO::ButtonO(string text, float x, float y)
     Note: the font size will modify the size of the button
 
  -------------------------------------------------------------*/
-ButtonO::ButtonO(string text, float x, float y, float font_size)
+ButtonO::ButtonO(string text, float x, float y, float fontSize)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
-    this->font_size = font_size;
-    btn_live_color = btn_idle;
-    border_live_color = border_idle;
-
-    ButtonR::build_btn();
+    rect.x = x;
+    rect.y = y;
+    this->fontSize = fontSize;
+    
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-3
@@ -107,14 +105,16 @@ ButtonO::ButtonO(string text, float x, float y, float font_size)
     button color
 
  ----------------------------------------------------*/
-ButtonO::ButtonO(string text, float x, float y, float font_size, Color font_color, Color btn_color)
+ButtonO::ButtonO(string text, float x, float y, float fontSize, Color fontColor, Color btnColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
-    this->font_size = font_size;
+    rect.x = x;
+    rect.y = y;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
 
-    ButtonR::build_btn();
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-4
@@ -126,17 +126,17 @@ ButtonO::ButtonO(string text, float x, float y, float font_size, Color font_colo
     button color, border color
 
  ----------------------------------------------------*/
-ButtonO::ButtonO(string text, float x, float y, float font_size, Color font_color, Color btn_color, Color border_color)
+ButtonO::ButtonO(string text, float x, float y, float fontSize, Color font_color, Color btnColor, Color borderColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
-    this->font_size = font_size;
-    this->font_color = font_color;
-    this->btn_live_color = btn_color;
-    this->border_live_color = border_color;
+    rect.x = x;
+    rect.y = y;
+    this->fontSize = fontSize;
+    this->fontColor = font_color;
+    btnIdle = btnColor;
+    borderIdle = borderColor;
 
-    ButtonR::build_btn();
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-5
@@ -150,12 +150,13 @@ ButtonO::ButtonO(string text, float x, float y, float font_size, Color font_colo
 ButtonO::ButtonO(string text, float x, float y, Font &font)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    is_ray_font = false;
 
-    ButtonR::build_btn();
+    isRayFont = false;
+
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-6
@@ -166,16 +167,17 @@ ButtonO::ButtonO(string text, float x, float y, Font &font)
     text, position, font, font size
 
  ----------------------------------------------------*/
-ButtonO::ButtonO(string text, float x, float y, Font &font, float font_size)
+ButtonO::ButtonO(string text, float x, float y, Font &font, float fontSize)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    this->font_size = font_size;
-    is_ray_font = false;
+    this->fontSize = fontSize;
 
-    ButtonR::build_btn();
+    isRayFont = false;
+
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-7
@@ -187,18 +189,19 @@ ButtonO::ButtonO(string text, float x, float y, Font &font, float font_size)
     button color
 
  ----------------------------------------------------*/
-ButtonO::ButtonO(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color)
+ButtonO::ButtonO(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    this->font_size = font_size;
-    this->btn_live_color = btn_color;
-    this->font_color = font_color;
-    is_ray_font = false;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
 
-    ButtonR::build_btn();
+    isRayFont = false;
+
+    ButtonR::buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-8
@@ -210,19 +213,20 @@ ButtonO::ButtonO(string text, float x, float y, Font &font, float font_size, Col
     button color, border color
 
  ----------------------------------------------------*/
-ButtonO::ButtonO(string text, float x, float y, Font &font, float font_size, Color font_color, Color btn_color, Color border_color)
+ButtonO::ButtonO(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor, Color borderColor)
 {
     this->text = text;
-    rec.x = x;
-    rec.y = y;
+    rect.x = x;
+    rect.y = y;
     this->font = font;
-    this->font_size = font_size;
-    this->btn_live_color = btn_color;
-    this->font_color = font_color;
-    this->border_live_color = border_color;
-    is_ray_font = false;
+    this->fontSize = fontSize;
+    this->fontColor = fontColor;
+    btnIdle = btnColor;
+    borderIdle = borderColor;
 
-    ButtonR::build_btn();
+    isRayFont = false;
+
+    ButtonR::buildBtn();
 }
 
 //----------------------------------------------------------------------------------
@@ -241,10 +245,10 @@ void ButtonO::draw()
 {
     ButtonR::update();
 
-    if (is_shadow) DrawRectangleRounded(shadow, roundness, 4, shadow_color);
-    DrawRectangleRounded(rec, roundness, 1, btn_live_color);
-    if (is_border)  DrawRectangleRoundedLines(border, roundness, 4, border_thickness, border_live_color);
-    DrawTextEx(font, text.c_str(), text_pos, font_size, font_spacing, font_color);
+    if (isShadow) DrawRectangleRounded(shadow, roundness, 4, shadowColor);
+    DrawRectangleRounded(rect, roundness, 1, btnLiveColor);
+    if (isBorder)  DrawRectangleRoundedLines(border, roundness, 4, borderThickness, borderLiveColor);
+    DrawTextEx(font, text.c_str(), text_pos, fontSize, fontSpacing, fontColor);
 }
 
 
