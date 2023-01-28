@@ -17,7 +17,7 @@ created date: 01/03/ 2023
                                             My button classes
 
 
-This project is about creating a button class in c++ with the raylib library.
+This project is my button classes in c++ with the raylib library.
 
 Requirement
 c and c++ 20 or later
@@ -50,6 +50,33 @@ Raylib library: https://www.raylib.com
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
  /*
    
+
+    ------------------------------------------------------------------------------------------------------------
+
+
+
+    The ButtonO class creates a rounded edges rectangle shaped static-size button, window-resized-not-responsive button.
+
+    The button size is computed from the font size and length of the text;
+    the text is automatically centered on the button.
+    See mutators to  modify the button’s position, the text’s position in the button, and the button’s size.
+
+    The button's border can be turn on and off.
+    the border's size is computed from the font size and length of the text;
+    modifying the button's size, we also modify the border's size.
+    See mutators for modifying specifically the shadow's size.
+
+    The button's shadow can be turn on and off.
+    The shadow size is computed from the font size and length of the text;
+    modifying the button's size, we also modify the shadow's size.
+    See mutators for modifying specifically the shadow's size and position.
+
+    The default font is raylib font.
+
+    Child class of ButtonR class
+
+    ------------------------------------------------------------------------------------------------------------
+
     
 
  */
@@ -181,7 +208,14 @@ int main()
 
     //------- Images buttons
     ButtonP btn7;
+    btn7.btnHoverColor = PURPLE; // button idle
+    btn7.setText("Continue");
+    btn7.setTextNoResize("up");
+    btn7.setTextPosition(btn1.rect.x, btn1.rect.y);
+    btn7.setFontSize(24);
+    //btn7.setFontSizeNoResize(34);
     ButtonP btn8("Button", 750, 225, "resources/images/button1.png", font1);
+    btn8.setFontSize(34);
     ButtonP btn9("Button", 750, 325, "resources/images/button1.png", font2);
     
     // Main game loop

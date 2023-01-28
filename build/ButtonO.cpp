@@ -248,7 +248,7 @@ void ButtonO::draw()
     if (isShadow) DrawRectangleRounded(shadow, roundness, 4, shadowColor);
     DrawRectangleRounded(rect, roundness, 1, btnLiveColor);
     if (isBorder)  DrawRectangleRoundedLines(border, roundness, 4, borderThickness, borderLiveColor);
-    DrawTextEx(font, text.c_str(), text_pos, fontSize, fontSpacing, fontColor);
+    DrawTextEx(font, text.c_str(), textPos, fontSize, fontSpacing, fontColor);
 }
 
 

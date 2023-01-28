@@ -253,7 +253,7 @@ void ButtonR::draw()
     if (isShadow) DrawRectangleRec(shadow, shadowColor);
     DrawRectangleRec(rect, btnLiveColor);
     if (isBorder) DrawRectangleLinesEx(border, borderThickness, borderLiveColor);
-    DrawTextEx(font, text.c_str(), text_pos, fontSize, fontSpacing, fontColor); 
+    DrawTextEx(font, text.c_str(), textPos, fontSize, fontSpacing, fontColor); 
 
 }
 
@@ -331,17 +331,17 @@ int ButtonR::update()
  -----------------------------------------------------------*/
 void ButtonR::buildBtn()
 {
-    float ratioWidth = (isRayFont) ? 3.5f : 4.0f,
-          ratioHeight = (isRayFont) ? 2.0f : 1.4f;
-
     //--- Button size
     /*
         The button size is computed from the font size and length of the text
         See mutators to modify the button’s position,
         the text’s position in the button, and the button’s size.
     */
+    float ratioWidth = (isRayFont) ? 3.5f : 4.0f,
+          ratioHeight = (isRayFont) ? 2.0f : 1.4f;
     textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing);
     oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
+  
     if (resizeBtn)
     {
         //--- Button size
@@ -349,7 +349,7 @@ void ButtonR::buildBtn()
         rect.height = textSize.y * (float)(ratioHeight * (textSize.y / fontSize));
     }
     //--- Centers text in button
-    text_pos =
+    textPos =
     {
         rect.x + (rect.width - textSize.x) / 2,
         rect.y + (rect.height - textSize.y) / 2
@@ -433,8 +433,8 @@ void ButtonR::setTextNoResize(string text)
  -----------------------------------------------------*/
 void ButtonR::setTextPosition(float x, float y)
 {
-    text_pos.x = x;
-    text_pos.y = y;
+    textPos.x = x;
+    textPos.y = y;
 }
 
 //----------------------------------------------------------------------------------

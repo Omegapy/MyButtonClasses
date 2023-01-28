@@ -139,7 +139,7 @@ public:
     bool isShadow = true;
 
     //--- Centers text in button
-    Vector2 text_pos =
+    Vector2 textPos =
     {
         rect.x + (rect.width - textSize.x) / 2,
         rect.y + (rect.height - textSize.y) / 2

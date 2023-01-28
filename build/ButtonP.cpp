@@ -10,25 +10,14 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 
-    The ButtonR class creates a rounded edges rectangle shaped static-size button, window-resized-not-responsive button.
+    The ButtonP class creates a responsive button from an image.
+    (The button resizes with the window)
 
     The button size is computed from the font size and length of the text;
     the text is automatically centered on the button.
-    See mutators to  modify the button’s position, the text’s position in the button, and the button’s size.
-
-    The button's border can be turn on and off.
-    the border's size is computed from the font size and length of the text;
-    modifying the button's size, we also modify the border's size.
-    See mutators for modifying specifically the shadow's size.
-
-    The button's shadow can be turn on and off.
-    The shadow size is computed from the font size and length of the text;
-    modifying the button's size, we also modify the shadow's size.
-    See mutators for modifying specifically the shadow's size and position.
+    See mutators to modify the button’s position, the text’s position in the button, and the button’s size.
 
     The default font is raylib font.
-
-
 
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,8 +47,8 @@
  ----------------------------------------------------*/
 ButtonP::ButtonP()
 {
-    img = LoadImage("resources/images/button1.png");
-    initBtn();
+    imgPath = "resources/images/button1.png";
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-1
@@ -72,12 +61,12 @@ ButtonP::ButtonP()
  ----------------------------------------------------*/
 ButtonP::ButtonP(string text, float x, float y, string imgPath)
 {
-    img = LoadImage(imgPath.c_str());
+    this->imgPath = imgPath;
     this->text = text;
     rect.x = x;
     rect.y = y;
 
-    initBtn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-2
@@ -92,13 +81,13 @@ ButtonP::ButtonP(string text, float x, float y, string imgPath)
  -------------------------------------------------------------*/
 ButtonP::ButtonP(string text, float x, float y, string imgPath, float fontSize)
 {
-    img = LoadImage(imgPath.c_str());
+    this->imgPath = imgPath;
     this->text = text;
     rect.x = x;
     rect.y = y;
     this->fontSize = fontSize;
 
-    initBtn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-3
@@ -111,14 +100,14 @@ ButtonP::ButtonP(string text, float x, float y, string imgPath, float fontSize)
  ----------------------------------------------------*/
 ButtonP::ButtonP(string text, float x, float y, string imgPath, float fontSize, Color fontColor)
 {
-    img = LoadImage(imgPath.c_str());
+    this->imgPath = imgPath;
     this->text = text;
     rect.x = x;
     rect.y = y;
     this->fontSize = fontSize;
     this->fontColor = fontColor;
 
-    initBtn();
+    buildBtn();
 }
 
 //--------------------------------------------------------------------- Constructor-5
@@ -131,7 +120,7 @@ ButtonP::ButtonP(string text, float x, float y, string imgPath, float fontSize, 
  ----------------------------------------------------*/
 ButtonP::ButtonP(string text, float x, float y, string imgPath, Font &font)
 {
-    img = LoadImage(imgPath.c_str());
+    this->imgPath = imgPath;
     this->text = text;
     rect.x = x;
     rect.y = y;
@@ -139,7 +128,26 @@ ButtonP::ButtonP(string text, float x, float y, string imgPath, Font &font)
 
     isRayFont = false;
 
-    initBtn();
+    buildBtn();
+}
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+
+// Destructor
+//---------------------------------------------------------------------------------
+ButtonP::~ButtonP() 
+{
+    //----------------------------------------------------------------------------------
+
+    // De-Initialization Textures
+    //----------------------------------------------------------------------------------
+    UnloadTexture(btnIdle);
+    UnloadTexture(btnHover);
+    UnloadTexture(btnPressed);
+    UnloadTexture(textIdle);
+    UnloadTexture(textHover);
+    UnloadTexture(textPressed);
 }
 
 //----------------------------------------------------------------------------------
@@ -148,7 +156,7 @@ ButtonP::ButtonP(string text, float x, float y, string imgPath, Font &font)
 // Accessors Functions
 //----------------------------------------------------------------------------------
 
-//--------------------------------------------------------------------- Function draw()
+//--------------------------------------------------------------------- Method draw()
 /*----------------------------------------------------
 
     Draws button
@@ -169,7 +177,7 @@ void ButtonP::draw()
 //---------------------------------------------------------------------------------
 
 
-//--------------------------------------------------------------------- Function update()
+//--------------------------------------------------------------------- Method update()
 /*----------------------------------------------------
 
     Updates button
@@ -243,6 +251,82 @@ int ButtonP::update()
 } // update()
 
 
+//--------------------------------------------------------------------- Method setFontSize()
+/*----------------------------------------------------
+
+    Sets font size and
+    Resizes button to fit text
+    Takes a string
+
+ -----------------------------------------------------*/
+void ButtonP::setFontSize(float fontSize) 
+{
+
+    this->fontSize = fontSize;
+    resizeBtn = true;
+    buildBtn();
+}
+
+
+//--------------------------------------------------------------------- Method setFontSizeNoResize()
+/*----------------------------------------------------
+
+     Sets font size and
+     does NOT resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonP::setFontSizeNoResize(float fontSize)
+{
+    this->fontSize = fontSize;
+    resizeBtn = false;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setText()
+/*----------------------------------------------------
+
+     Sets text and
+     Resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonP::setText(string text)
+{
+    this->text = text;
+    resizeBtn = true;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setTextNoResize()
+/*----------------------------------------------------
+
+     Sets text and
+     does NOT resizes button to fit text
+     Takes a string
+
+ -----------------------------------------------------*/
+void ButtonP::setTextNoResize(string text)
+{
+    this->text = text;
+    resizeBtn = false;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setTextPosition()
+/*----------------------------------------------------
+
+     Sets text position
+     does NOT resizes button to fit text
+
+ -----------------------------------------------------*/
+void ButtonP::setTextPosition(float x, float y)
+{
+    textPos.x = x;
+    textPos.y = y;
+}
+
+
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
 
@@ -250,22 +334,15 @@ int ButtonP::update()
 //---------------------------------------------------------------------------------
 
 
-//--------------------------------------------------------------------- Method build_btn()
+//--------------------------------------------------------------------- Method buildBtn()
 /*----------------------------------------------------------
 
     Builds the botton,
     computes size from the font size and length of the text
 
  -----------------------------------------------------------*/
-void ButtonP::initBtn()
+void ButtonP::buildBtn()
 {
-    //----------------------------------------------------------------------------------
-
-    // Variables
-    //----------------------------------------------------------------------------------
-    
-    float ratioWidth = (isRayFont) ? 3.5f : 4.0f,
-          ratioHeight = (isRayFont) ? 2.2f : 2.0f;
 
     //--- Button size
     /*
@@ -273,37 +350,43 @@ void ButtonP::initBtn()
         See mutators to modify the button’s position,
         the text’s position in the button, and the button’s size.
     */
+
+    float ratioWidth = (isRayFont) ? 3.4f : 4.0f,
+          ratioHeight = (isRayFont) ? 2.2f : 2.0f;
     textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing);
     oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
 
-    //--- Button size
-    rect.width = (textSize.x + ratioWidth * oneCharSize.x);
-    rect.height = textSize.y * (float)(ratioHeight * (textSize.y / fontSize));
-    // Init original rectangle
-    btnPos = { rect.x, rect.y };
-    originalRect = rect; // for width and height
-    originalRect.x = 0;
-    originalRect.y = 0;
-
+    if (resizeBtn)
+    {
+        //--- Button size
+        rect.width = (textSize.x + ratioWidth * oneCharSize.x);
+        rect.height = textSize.y * (float)(ratioHeight * (textSize.y / fontSize));
+        // Init original rectangle
+        btnPos = { rect.x, rect.y };
+        originalRect = rect; // for width and height
+        originalRect.x = 0;
+        originalRect.y = 0;
+    }
     //--- Centers text in button
     textPos =
     {
         rect.x + (rect.width - textSize.x) / 2,
         rect.y + (rect.height - textSize.y) / 2
     };
-    
+
     // Text position and size
     rectText = { textPos.x, textPos.y, textSize.x, textSize.y },
-    // Init original rectangle text
-    originalRectText = rectText; // for width and height
-    originalRectText.x = 0;
-    originalRectText.y = 0;
+               // Init original rectangle text
+              originalRectText = rectText; // for width and height
+              originalRectText.x = 0;
+              originalRectText.y = 0;
 
     //---- Image
     // Button image
-    ImageResize(&img, (int)rect.width, (int)rect.height); // Resize image (Bicubic scaling algorithm)
+    img = LoadImage(imgPath.c_str()); // Load image in CPU memory (RAM)
+    ImageResize(&img, (int)rect.width + 1, (int)rect.height + 1); // Resize image (Bicubic scaling algorithm)
     // Text image
-    textImg =  ImageTextEx(font, text.c_str(), fontSize, fontSpacing, fontColor);
+    textImg = ImageTextEx(font, text.c_str(), fontSize, fontSpacing, fontColor);
     ImageResize(&textImg, (int)rectText.width, (int)rectText.height);
 
     //---- Button state, idle, hover, pressed, Shades button image
@@ -344,12 +427,15 @@ void ButtonP::initBtn()
 
     //--------------------------------------------------------------------------------------
 
-   // De-Initialization
-   //--------------------------------------------------------------------------------------
+    // De-Initialization Images
+    //--------------------------------------------------------------------------------------
 
     UnloadImage(img); // Once image has been converted to texture and uploaded to VRAM, it can be unloaded from RAM
     UnloadImage(textImg);
     UnloadImage(tintImg);
     UnloadImageColors(pixels);
-    
-}
+
+} // buildBtn()
+
+
+

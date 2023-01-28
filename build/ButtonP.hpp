@@ -10,25 +10,14 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 
-    The ButtonR class creates a rectangle shaped static-size button, window-resized-not-responsive button.
+    The ButtonP class creates a responsive button from an image.
+    (The button resizes with the window).
 
     The button size is computed from the font size and length of the text;
     the text is automatically centered on the button.
-    See mutators to  modify the button’s position, the text’s position in the button, and the button’s size.
-
-    The button's border can be turn on and off.
-    the border's size is computed from the font size and length of the text;
-    modifying the button's size, we also modify the border's size.
-    See mutators for modifying specifically the shadow's size.
-
-    The button's shadow can be turn on and off.
-    The shadow size is computed from the font size and length of the text;
-    modifying the button's size, we also modify the shadow's size.
-    See mutators for modifying specifically the shadow's size and position.
+    See mutators to modify the button’s position, the text’s position in the button, and the button’s size.
 
     The default font is raylib font.
-
-    Parent class to the ButtonO class
 
     Requirement
     c and c++ 20 or later
@@ -92,6 +81,8 @@ public:
     string text = "Button";
     Vector2 textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing),
             oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
+
+    //----- B
     
     //--- Button position, size, color
     /*
@@ -99,11 +90,11 @@ public:
         See mutators to modify the button’s position,
         the text’s position in the button, and the button’s size.
     */
-    bool resize_btn = true;
-    float btn_width = (textSize.x + 3.5f * oneCharSize.x),
-          btn_height = textSize.y * (float)(2.0f * (textSize.y / fontSize));
+    bool resizeBtn = true;
+    float btnWidth = (textSize.x + 3.5f * oneCharSize.x),
+          btnHeight = textSize.y * (float)(2.0f * (textSize.y / fontSize));
     Vector2 btnPos = { 750, 100 };
-    Rectangle rect{ btnPos.x, btnPos.y, btn_width, btn_height },
+    Rectangle rect{ btnPos.x, btnPos.y, btnWidth, btnHeight },
               originalRect = rect;
     //--- Centers text in button
     Vector2 textPos =
@@ -119,15 +110,16 @@ public:
     // Button and text image Shading Colors
     Color btnHoverColor = GRAY,
           btnPressedColor = DARKGRAY;
-    // Button Image
-    Image img = LoadImage("");    // Load image in CPU memory (RAM) // Load image in CPU memory (RAM)                                  
+    //---- Button Image
+    string imgPath; // Image path in secondary memory
+    Image img;                                    
     // Button textures
     Texture2D btnIdle = LoadTextureFromImage(img);  // Image converted to texture, uploaded to GPU memory (VRAM)
     Texture2D btnHover = btnIdle;
     Texture2D btnPressed = btnIdle;
     Texture2D *btnLive = &btnIdle;
-    // Text Image
-    Image textImg = LoadImage("");
+    //---- Text Image
+    Image textImg;
     Texture2D textIdle = LoadTextureFromImage(textImg);
     Texture2D textHover = textIdle;
     Texture2D textPressed = textIdle;
@@ -137,6 +129,7 @@ public:
     int windowWidth = GetScreenWidth();
     int windowHeight = GetScreenHeight();
     Vector2 windowScale = { (float)GetScreenWidth() / windowWidth, (float)GetScreenHeight() / windowHeight };
+
 
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -192,6 +185,14 @@ public:
      ----------------------------------------------------*/
     ButtonP(string text, float x, float y, string imgPath, Font &font);
 
+    
+    //----------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
+
+    // Destructor
+    //---------------------------------------------------------------------------------
+    ~ButtonP();
+
 
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -222,7 +223,50 @@ public:
      -----------------------------------------------------*/
     int update();
 
-    
+
+    /*----------------------------------------------------
+
+        Sets font size and
+        Resizes button to fit text
+        Takes a string
+
+     -----------------------------------------------------*/
+    void setFontSize(float fontSize);
+
+    /*----------------------------------------------------
+
+        Sets font size and
+        does NOT resizes button to fit text
+        Takes a string
+
+     -----------------------------------------------------*/
+    void setFontSizeNoResize(float fontSize);
+
+    /*----------------------------------------------------
+
+         Sets text and
+         Resizes button to fit text
+         Takes a string
+
+     -----------------------------------------------------*/
+    void setText(string text);
+
+    /*----------------------------------------------------
+
+         Sets text and
+         does NOT resizes button to fit text
+         Takes a string
+
+     -----------------------------------------------------*/
+    void setTextNoResize(string text);
+
+    /*----------------------------------------------------
+
+         Sets text position
+         does NOT resizes button to fit text
+
+     -----------------------------------------------------*/
+    void setTextPosition(float x, float y);   
 
 private:
 
@@ -233,14 +277,14 @@ private:
     // Classe Operation Functions (private)
     //---------------------------------------------------------------------------------
 
+
     /*----------------------------------------------------------
 
         Builds the botton,
         computes size from the font size and length of the text
 
      -----------------------------------------------------------*/
-     void initBtn();
-
+    void buildBtn();
 
 };
 #endif
