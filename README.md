@@ -4,17 +4,17 @@
 
 Button classes in c++ and the raylib library.
 
- Alejandro (Alex) Ricciardi
- created date: 01/05/2023
- Initialized with MyRaylibTemplate
- https://github.com/Omegapy/MyRaylibTemplate
+ Alejandro (Alex) Ricciardi  
+ created date: 01/05/2023  
+ Initialized with MyRaylibTemplate  
+ https://github.com/Omegapy/MyRaylibTemplate  
 
 -----------------------------------------------------------------------------------------------------------------------------
 Requirements:
 
-c and c++ 20 or later  
-MS Windows 10 or later 
-Raylib library: https://www.raylib.com
+c and c++ 20 or later    
+MS Windows 10 or later   
+Raylib library: https://www.raylib.com  
 
 -----------------------------------------------------------------------------------------------------------------------------
 Project description:
@@ -46,7 +46,8 @@ The project contains my button classes in c++ and the raylib library.
 ButtonR button;
 
 /*
-    The ButtonO class creates a rounded edges rectangle shaped static-size button, window-resized-not-responsive button.
+    The ButtonO class creates a rounded edges rectangle shaped static-size button, 
+    window-resized-not-responsive button.
 
     The button size is computed from the font size and length of the text;
     the text is automatically centered on the button.
