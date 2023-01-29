@@ -10,18 +10,19 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 
-    The ButtonO class creates a rounded edges rectangle shaped static-size button, window-resized-not-responsive button.
+    The ButtonO class creates a rounded edges rectangle shaped static-size button, 
+    window-resized-not-responsive button.
 
     The button size is computed from the font size and length of the text;
     the text is automatically centered on the button.
-    See mutators to  modify the button’s position, the text’s position in the button, and the button’s size.
+    See mutators to modify the button’s position, the text’s position in the button, and the button’s size.
 
-    The button's border can be turn on and off.
+    The button's border can be turned on and off.
     the border's size is computed from the font size and length of the text;
     modifying the button's size, we also modify the border's size.
     See mutators for modifying specifically the shadow's size.
 
-    The button's shadow can be turn on and off.
+    The button's shadow can be turned on and off.
     The shadow size is computed from the font size and length of the text;
     modifying the button's size, we also modify the shadow's size.
     See mutators for modifying specifically the shadow's size and position.
@@ -161,7 +162,7 @@ public:
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
-    // Accessors Functions
+    // Accessors Methods
     //----------------------------------------------------------------------------------
 
     /*----------------------------------------------------
@@ -176,7 +177,7 @@ public:
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
-    // Mutators Functions
+    // Mutators Methods
     //---------------------------------------------------------------------------------
 
     /*----------------------------------------------------

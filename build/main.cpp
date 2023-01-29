@@ -50,6 +50,29 @@ Raylib library: https://www.raylib.com
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
  /*
    
+    ------------------------------------------------------------------------------------------------------------
+
+    -- ButtonR --
+
+    The ButtonR class creates a rectangle-shaped static-size button, window-resized-not-responsive button.
+
+    The button size is computed from the font size and length of the text;
+    the text is automatically centered on the button.
+    See mutators to modify the button’s position, the text’s position in the button, and the button’s size.
+
+    The button's border can be turned on and off.
+    the border's size is computed from the font size and length of the text;
+    modifying the button's size, we also modify the border's size.
+    See mutators for modifying specifically the shadow's size.
+
+    The button's shadow can be turned on and off.
+    The shadow size is computed from the font size and length of the text;
+    modifying the button's size, we also modify the shadow's size.
+    See mutators for modifying specifically the shadow's size and position.
+
+    The default font is raylib font.
+
+    Parent class to the ButtonO class
 
     ------------------------------------------------------------------------------------------------------------
 
@@ -77,7 +100,18 @@ Raylib library: https://www.raylib.com
 
     ------------------------------------------------------------------------------------------------------------
 
-    
+    -- ButtonP --
+
+    The ButtonP class creates a responsive button from an image.
+    (The button resizes with the window)
+
+    The button size is computed from the font size and length of the text;
+    the text is automatically centered on the button.
+    See mutators to modify the button’s position, the text’s position in the button, and the button’s size.
+
+    The default font is raylib font.
+
+    ------------------------------------------------------------------------------------------------------------
 
  */
 
@@ -176,7 +210,7 @@ int main()
 
     //------ Rectangle buttons
     ButtonR btn1;
-    //btn1.isShadow = false;
+    btn1.isShadow = false;
     //btn1.btnIdle = PURPLE; // button idle
     //btn1. borderThickness = 4;
     //btn1.isBorder = false;
@@ -186,7 +220,7 @@ int main()
     //btn1.setFontSize(24);
     //btn1.setFontSizeNoResize(34);
 
-    ButtonR btn2("Button", 100, 225, font1);
+    ButtonR btn2("Continue", 100, 225, font1);
     //btn2.isShadow = false;
     ButtonR btn3("Button", 100, 300, font2);
 
@@ -200,7 +234,7 @@ int main()
     //btn4.setText("Continue");
     //btn4.setTextNoResize("up");
     //btn4.setTextPosition(btn1.rect.x, btn1.rect.y);
-    //btn4.setFontSize(24);
+    //btn4.setFontSize(64);
     //btn4.setFontSizeNoResize(34);
 
     ButtonO btn5("Button",450, 225, font1);

@@ -11,7 +11,7 @@
 /*
 
     The ButtonP class creates a responsive button from an image.
-    (The button resizes with the window).
+    (The button resizes with the window)
 
     The button size is computed from the font size and length of the text;
     the text is automatically centered on the button.
@@ -195,7 +195,7 @@ public:
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
-    // Accessors Functions
+    // Accessors Methods
     //----------------------------------------------------------------------------------
 
 
@@ -210,7 +210,7 @@ public:
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
-    // Mutators Functions
+    // Mutators Methods
     //---------------------------------------------------------------------------------
 
 
@@ -280,13 +280,14 @@ public:
      -----------------------------------------------------*/
     void setPressedColor(Color btnPressedColor);
 
+
 private:
 
 
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
 
-    // Classe Operation Functions (private)
+    // Classe Operation Methods (private)
     //---------------------------------------------------------------------------------
 
 
