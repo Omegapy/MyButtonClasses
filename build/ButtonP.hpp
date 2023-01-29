@@ -69,7 +69,7 @@ public:
     //----------------------------------------------------------------------------------
     
    
-     //---- Font 
+    //---- Font 
     Font font = GetFontDefault(); // Raylib default font
     float fontSize = 32,
           fontSpacing = 2.0f;
@@ -82,8 +82,6 @@ public:
     Vector2 textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing),
             oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
 
-    //----- B
-    
     //--- Button position, size, color
     /*
         The button size is computed from the font size and length of the text
@@ -267,6 +265,20 @@ public:
 
      -----------------------------------------------------*/
     void setTextPosition(float x, float y);   
+
+    /*----------------------------------------------------
+
+        Sets the hover color for button and text
+
+     -----------------------------------------------------*/
+    void setHoverColor(Color btnHoverColor);
+
+    /*----------------------------------------------------
+
+        Sets the pressed color for button and text
+
+     -----------------------------------------------------*/
+    void setPressedColor(Color btnPressedColor);
 
 private:
 

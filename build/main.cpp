@@ -208,8 +208,7 @@ int main()
 
     //------- Images buttons
     ButtonP btn7;
-    btn7.btnHoverColor = PURPLE; // button idle
-    //btn7.setText("Continue");
+    //btn7.setHoverColor(PURPLE);
     //btn7.setTextNoResize("up");
     //btn7.setTextPosition(btn1.rect.x, btn1.rect.y);
     //btn7.setFontSize(24);

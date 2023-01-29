@@ -326,6 +326,30 @@ void ButtonP::setTextPosition(float x, float y)
     textPos.y = y;
 }
 
+//--------------------------------------------------------------------- Method setHoverColor()
+/*----------------------------------------------------
+
+     Sets the hover color for button and text
+
+ -----------------------------------------------------*/
+void ButtonP::setHoverColor(Color btnHoverColor)
+{
+    this->btnHoverColor = btnHoverColor;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setPressedColor()
+/*----------------------------------------------------
+
+     Sets the pressed color for button and text
+
+ -----------------------------------------------------*/
+void ButtonP::setPressedColor(Color btnPressedColor)
+{
+    this->btnPressedColor = btnPressedColor;
+    buildBtn();
+}
+
 
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
