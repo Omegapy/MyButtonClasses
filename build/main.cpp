@@ -53,7 +53,7 @@ Raylib library: https://www.raylib.com
 
     ------------------------------------------------------------------------------------------------------------
 
-
+    -- ButtonO --
 
     The ButtonO class creates a rounded edges rectangle shaped static-size button, window-resized-not-responsive button.
 
@@ -209,13 +209,13 @@ int main()
     //------- Images buttons
     ButtonP btn7;
     btn7.btnHoverColor = PURPLE; // button idle
-    btn7.setText("Continue");
-    btn7.setTextNoResize("up");
-    btn7.setTextPosition(btn1.rect.x, btn1.rect.y);
-    btn7.setFontSize(24);
+    //btn7.setText("Continue");
+    //btn7.setTextNoResize("up");
+    //btn7.setTextPosition(btn1.rect.x, btn1.rect.y);
+    //btn7.setFontSize(24);
     //btn7.setFontSizeNoResize(34);
     ButtonP btn8("Button", 750, 225, "resources/images/button1.png", font1);
-    btn8.setFontSize(34);
+    //btn8.setFontSize(34);
     ButtonP btn9("Button", 750, 325, "resources/images/button1.png", font2);
     
     // Main game loop

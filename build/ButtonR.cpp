@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------****************************************----------------------------------
 |                                *                                      *                                 |
-|  Program Buttons               *       BottonO Class Definitions      *                                 |
+|  Program Buttons               *       BottonR Class Definitions      *                                 |
 |                                *                                      *                                 |
 ---------------------------------****************************************----------------------------------*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 
-    The ButtonO class creates a rectangle shaped static-size button, window-resized-not-responsive button.
+    The ButtonR class creates a rectangle shaped static-size button, window-resized-not-responsive button.
       
     The button size is computed from the font size and length of the text; 
     the text is automatically centered on the button.
