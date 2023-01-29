@@ -98,7 +98,7 @@ ButtonP button;
 Links  :  
 Project GitHub: https://github.com/Omegapy/MyButtonClasses  
 GitHub: https://github.com/Omegapy  
-YouTube: https://www.youtube.com/@omegapy (new)
+YouTube: https://www.youtube.com/watch?v=I_9yhN82opo&t=17 
 
 -----------------------------------------------------------------------------------------------------------------------------
 Credits:
