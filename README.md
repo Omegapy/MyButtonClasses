@@ -41,12 +41,10 @@ The project contains my button classes in c++ and the raylib library.
     The button's border can be turn on and off.
     the border's size is computed from the font size and length of the text;
     modifying the button's size, we also modify the border's size.
-    See mutators for modifying specifically the shadow's size.
 
     The button's shadow can be turn on and off.
     The shadow size is computed from the font size and length of the text;
     modifying the button's size, we also modify the shadow's size.
-    See mutators for modifying specifically the shadow's size and position.
 
     The default font is raylib font.
       
@@ -66,12 +64,10 @@ ButtonR button;
     The button's border can be turn on and off.
     the border's size is computed from the font size and length of the text;
     modifying the button's size, we also modify the border's size.
-    See mutators for modifying specifically the shadow's size.
 
     The button's shadow can be turn on and off.
     The shadow size is computed from the font size and length of the text;
     modifying the button's size, we also modify the shadow's size.
-    See mutators for modifying specifically the shadow's size and position.
 
     The default font is raylib font.
       
