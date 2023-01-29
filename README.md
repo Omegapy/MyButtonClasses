@@ -16,13 +16,19 @@ c and c++ 20 or later
 MS Windows 10 or later   
 Raylib library: https://www.raylib.com  
 
-![image](https://user-images.githubusercontent.com/121726699/215234958-2659b12a-4181-4f6b-a757-3e868244192e.png)
-![image](https://user-images.githubusercontent.com/121726699/215234968-9f5961e4-8ca0-4f4e-acdc-53c1817547dd.png)
+<p align="left">
+  <img width="75" height="75" src="https://user-images.githubusercontent.com/121726699/215234958-2659b12a-4181-4f6b-a757-3e868244192e.png">
+  <img width="200" height="100" src="https://user-images.githubusercontent.com/121726699/215234968-9f5961e4-8ca0-4f4e-acdc-53c1817547dd.png">
+</p>
 
 -----------------------------------------------------------------------------------------------------------------------------
 Project description:
 
 The project contains my button classes in c++ and the raylib library.
+
+<p align="center">
+ <img width="150" height="75"src="https://user-images.githubusercontent.com/121726699/215300372-34bd2249-3a93-49cf-a213-71ddeb2f0a62.png">
+</p>
 
 ~~~c++
 /*
@@ -47,7 +53,8 @@ The project contains my button classes in c++ and the raylib library.
     Parent class to the ButtonO class
 */
 ButtonR button;
-
+~~~
+~~~c++
 /*
     The ButtonO class creates a rounded edges rectangle shaped static-size button, 
     window-resized-not-responsive button.
@@ -71,7 +78,8 @@ ButtonR button;
     Child class of ButtonR class
 */
 ButtonO button;
-
+~~~
+~~~c++
 /*
     The ButtonP class creates a responsive button from an image.
     (The button resizes with the window)
