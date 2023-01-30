@@ -89,6 +89,9 @@ ButtonO button;
 ButtonP button;
 ~~~
 
+Link: <a href='https://github.com/Omegapy/MyButtonClasses/wiki/Image-How-To-ButtonP-Class'>Image How To ButtonP Class</a>
+
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 Links  :  
@@ -100,5 +103,5 @@ YouTube: https://www.youtube.com/watch?v=I_9yhN82opo&t=17
 Credits:
 
 Example button image:  
-<a href='https://pngtree.com/so/icons'>icons png from pngtree.com/</a>
+<a href='https://pngtree.com/so/icons'>icons png from pngtree.com</a>
 
