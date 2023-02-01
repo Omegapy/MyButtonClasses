@@ -1,8 +1,0 @@
-﻿  ButtonO.cpp
-  ButtonR.cpp
-  main.cpp
-  Generating Code...
-ButtonO.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl ButtonO::draw(void)" (?draw@ButtonO@@UEAAXXZ)
-main.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl ButtonO::draw(void)" (?draw@ButtonO@@UEAAXXZ)
-ButtonO.obj : error LNK2019: unresolved external symbol "private: virtual void __cdecl ButtonO::build_btn(void)" (?build_btn@ButtonO@@EEAAXXZ) referenced in function "public: __cdecl ButtonO::ButtonO(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,float)" (??0ButtonO@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z)
-..\bin\Release\MyButtonClasses.exe : fatal error LNK1120: 2 unresolved externals
