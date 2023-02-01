@@ -1,0 +1,105 @@
+﻿  raudio.c
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(130,53): warning C4244: '=': conversion from 'float' to 'short', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(143,53): warning C4244: '=': conversion from 'float' to 'char', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1238,47): warning C4244: '=': conversion from 'uint16_t' to 'uint8_t', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1254,28): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1256,33): warning C4244: 'initializing': conversion from 'float' to 'int8_t', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1417,43): warning C4244: '=': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1424,53): warning C4244: '=': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1426,43): warning C4244: '=': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1437,43): warning C4244: '=': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1464,41): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1824,41): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1933,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(1990,33): warning C4244: '=': conversion from 'float' to 'uint32_t', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(2029,45): warning C4244: '=': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(2162,21): warning C4244: '+=': conversion from 'float' to 'uint64_t', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\jar_xm.h(2322,38): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\raudio.c(1759,45): warning C4244: 'initializing': conversion from 'drwav_uint64' to 'int', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\raudio.c(1770,45): warning C4244: 'initializing': conversion from 'drwav_uint64' to 'int', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\raudio.c(1810,41): warning C4244: 'initializing': conversion from 'drmp3_uint64' to 'int', possible loss of data
+  rcore.c
+  rglfw.c
+  rmodels.c
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(225,14): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(226,14): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(294,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(574,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(575,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(583,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(584,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(608,20): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(599,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(600,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(616,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(625,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(635,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(636,27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(658,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(660,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(661,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(667,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(668,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(669,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(650,37): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(651,31): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(652,23): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(653,23): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(654,23): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(655,23): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(727,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(728,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(752,29): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(726,38): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(835,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(836,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(837,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(883,28): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(931,34): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1031,33): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1362,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1364,58): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1366,58): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1368,58): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1525,38): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1542,20): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1543,20): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1544,20): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1546,39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1830,33): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1830,49): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1830,65): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\par_shapes.h(1799,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(693,37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(836,37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(4700,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5100,40): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5278,30): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5352,44): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5357,48): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5570,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5587,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5639,58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5641,58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5643,58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5667,55): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5687,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5764,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5867,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rmodels.c(5887,35): warning C4018: '<': signed/unsigned mismatch
+  rshapes.c
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(108,25): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(108,31): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(159,20): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(159,31): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(160,20): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(160,29): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(212,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(257,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\rshapes.c(302,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  rtext.c
+  rtextures.c
+C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\raylib-master\src\external\qoi.h(662,15): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  utils.c
+  Generating Code...
+  raylib.vcxproj -> C:\Users\copya\OneDrive\Desktop\Projects\GitHub omegapy\MyButtonClasses\bin\Release\raylib.lib
