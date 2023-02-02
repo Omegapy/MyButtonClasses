@@ -280,6 +280,12 @@ public:
      -----------------------------------------------------*/
     void setPressedColor(Color btnPressedColor);
 
+    /*----------------------------------------------------
+
+       Sets the button position in the screen
+
+     -----------------------------------------------------*/
+    void ButtonP::setBtnPosition(float btnX, float btnY);
 
 private:
 

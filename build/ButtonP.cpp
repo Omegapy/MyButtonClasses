@@ -350,6 +350,19 @@ void ButtonP::setPressedColor(Color btnPressedColor)
     buildBtn();
 }
 
+//--------------------------------------------------------------------- Method setBtnPosition()
+/*----------------------------------------------------
+
+     Sets the button position in the screen
+
+ -----------------------------------------------------*/
+void ButtonP::setBtnPosition(float btnX, float btnY)
+{
+    rect.x = btnX;
+    rect.y = btnY;
+    buildBtn();
+}
+
 
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------

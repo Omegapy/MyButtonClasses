@@ -321,6 +321,12 @@ public:
      -----------------------------------------------------*/
     void setTextPosition(float x, float y);
    
+    /*----------------------------------------------------
+
+       Sets the button position in the screen
+
+     -----------------------------------------------------*/
+    void setBtnPosition(float btnX, float btnY);
 
 private:
 
