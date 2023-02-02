@@ -15,15 +15,15 @@
       
     The button size is computed from the font size and length of the text; 
     the text is automatically centered on the button.
-    See mutators to modify the button’s position, the text’s position in the button, and the button’s size.
+    See mutators to modify the buttonâ€™s position, the textâ€™s position in the button, and the buttonâ€™s size.
 
     The button's border can be turned on and off.
     the border's size is computed from the font size and length of the text;
-    modifying the button's size, we also modify the border's size.
+    modifying the button's size will also modify the border's size.
 
     The button's shadow can be turned on and off.
     The shadow size is computed from the font size and length of the text;
-    modifying the button's size, we also modify the shadow's size.
+    modifying the button's size will also modify the shadow's size.
 
     The default font is raylib font.
       
@@ -95,8 +95,8 @@ public:
     //--- Button position, size, color
     /*
         The button size is computed from the font size and length of the text
-        See mutators to modify the button’s position,
-        the text’s position in the button, and the button’s size.
+        See mutators to modify the buttonâ€™s position,
+        the textâ€™s position in the button, and the buttonâ€™s size.
     */
     bool resizeBtn = true;
     float btnWidth = (textSize.x + 3.5f * oneCharSize.x),
