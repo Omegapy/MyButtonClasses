@@ -330,7 +330,8 @@ public:
 
     /*----------------------------------------------------
 
-        Sets the button position in the screen
+        Sets sizes of the button,
+        does not resise fonts
 
      -----------------------------------------------------*/
     void setBtnSize(float btnWidth, float btnHeight);

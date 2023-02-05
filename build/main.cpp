@@ -207,7 +207,7 @@ int main()
 
     //------ Rectangle buttons
     ButtonR btn1;
-    btn1.isShadow = false;
+    //btn1.isShadow = false;
     //btn1.btnIdle = PURPLE; // button idle
     //btn1. borderThickness = 4;
     //btn1.isBorder = false;

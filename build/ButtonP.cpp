@@ -366,7 +366,8 @@ void ButtonP::setBtnPosition(float btnX, float btnY)
 //--------------------------------------------------------------------- Method setBtnSize()
 /*----------------------------------------------------
 
-     Sets the button position in the screen
+    Sets sizes of the button,
+    does not resise fonts
 
  -----------------------------------------------------*/
 void ButtonP::setBtnSize(float btnWidth, float btnHeight)
