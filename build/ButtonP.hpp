@@ -75,7 +75,6 @@ public:
           fontSpacing = 2.0f;
     Color fontColor = RAYWHITE;
     bool isRayFont = true;
-    bool isFont = false;
     
     //---- Text
     string text = "Button";
