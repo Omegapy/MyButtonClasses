@@ -263,7 +263,7 @@ void ButtonP::setFontSize(float fontSize)
 {
 
     this->fontSize = fontSize;
-    resizeBtn = true;
+    txtResizeBtn = true;
     buildBtn();
 }
 
@@ -279,7 +279,7 @@ void ButtonP::setFontSize(float fontSize)
 void ButtonP::setFontSizeNoResize(float fontSize)
 {
     this->fontSize = fontSize;
-    resizeBtn = false;
+    txtResizeBtn = false;
     buildBtn();
 }
 
@@ -294,7 +294,7 @@ void ButtonP::setFontSizeNoResize(float fontSize)
 void ButtonP::setText(string text)
 {
     this->text = text;
-    resizeBtn = true;
+    txtResizeBtn = true;
     buildBtn();
 }
 
@@ -309,7 +309,7 @@ void ButtonP::setText(string text)
 void ButtonP::setTextNoResize(string text)
 {
     this->text = text;
-    resizeBtn = false;
+    txtResizeBtn = false;
     buildBtn();
 }
 
@@ -363,6 +363,19 @@ void ButtonP::setBtnPosition(float btnX, float btnY)
     buildBtn();
 }
 
+//--------------------------------------------------------------------- Method setBtnSize()
+/*----------------------------------------------------
+
+     Sets the button position in the screen
+
+ -----------------------------------------------------*/
+void ButtonP::setBtnSize(float btnWidth, float btnHeight)
+{
+    rect.width = btnWidth;
+    rect.height = btnHeight;
+    txtResizeBtn = false;
+    buildBtn();
+}
 
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
@@ -393,12 +406,19 @@ void ButtonP::buildBtn()
     textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing);
     oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
 
-    if (resizeBtn)
+    if (txtResizeBtn)
     {
         //--- Button size
         rect.width = (textSize.x + ratioWidth * oneCharSize.x);
         rect.height = textSize.y * (float)(ratioHeight * (textSize.y / fontSize));
         // Init original rectangle
+        btnPos = { rect.x, rect.y };
+        originalRect = rect; // for width and height
+        originalRect.x = 0;
+        originalRect.y = 0;
+    }
+    else 
+    {
         btnPos = { rect.x, rect.y };
         originalRect = rect; // for width and height
         originalRect.x = 0;

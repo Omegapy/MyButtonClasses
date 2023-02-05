@@ -75,7 +75,7 @@ public:
           fontSpacing = 2.0f;
     Color fontColor = RAYWHITE;
     bool isRayFont = true;
-    bool is_font = false;
+    bool isFont = false;
     
     //---- Text
     string text = "Button";
@@ -88,7 +88,7 @@ public:
         See mutators to modify the button’s position,
         the text’s position in the button, and the button’s size.
     */
-    bool resizeBtn = true;
+    bool txtResizeBtn = true;
     float btnWidth = (textSize.x + 3.5f * oneCharSize.x),
           btnHeight = textSize.y * (float)(2.0f * (textSize.y / fontSize));
     Vector2 btnPos = { 750, 100 };
@@ -286,6 +286,13 @@ public:
 
      -----------------------------------------------------*/
     void ButtonP::setBtnPosition(float btnX, float btnY);
+
+    /*----------------------------------------------------
+
+        Sets the button position in the screen
+
+     -----------------------------------------------------*/
+    void setBtnSize(float btnWidth, float btnHeight);
 
 private:
 

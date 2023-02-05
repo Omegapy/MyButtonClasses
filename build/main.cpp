@@ -236,6 +236,7 @@ int main()
 
     ButtonO btn5("Button",450, 225, font1);
     ButtonO btn6("Button", 450, 300, font2);
+    //btn6.setBtnSize(150, 100);
 
     //------- Images buttons
     ButtonP btn7;
@@ -247,6 +248,7 @@ int main()
     ButtonP btn8("Button", 750, 225, "resources/images/button1.png", font1);
     //btn8.setFontSize(34);
     ButtonP btn9("Button", 750, 325, "resources/images/button1.png", font2);
+    //btn9.setBtnSize(150, 100);
     
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key

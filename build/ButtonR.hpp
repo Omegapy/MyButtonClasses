@@ -98,7 +98,7 @@ public:
         See mutators to modify the button’s position,
         the text’s position in the button, and the button’s size.
     */
-    bool resizeBtn = true;
+    bool txtResizeBtn = true;
     float btnWidth = (textSize.x + 3.5f * oneCharSize.x),
           btnHeight = textSize.y * (float)(2.0f * (textSize.y / fontSize));
     Rectangle rect{ 100, 100, btnWidth, btnHeight };
@@ -327,6 +327,13 @@ public:
 
      -----------------------------------------------------*/
     void setBtnPosition(float btnX, float btnY);
+
+    /*----------------------------------------------------
+
+        Sets the button position in the screen
+
+     -----------------------------------------------------*/
+    void setBtnSize(float btnWidth, float btnHeight);
 
 private:
 

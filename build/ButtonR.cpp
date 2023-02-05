@@ -340,7 +340,7 @@ void ButtonR::buildBtn()
     textSize = MeasureTextEx(font, text.c_str(), fontSize, fontSpacing);
     oneCharSize = MeasureTextEx(font, "C", fontSize, fontSpacing);
   
-    if (resizeBtn)
+    if (txtResizeBtn)
     {
         //--- Button size
         rect.width = (textSize.x + ratioWidth * oneCharSize.x);
@@ -373,7 +373,7 @@ void ButtonR::buildBtn()
 void ButtonR::setFontSize(float fontSize)
 {
     this->fontSize = fontSize;
-    resizeBtn = true;
+    txtResizeBtn = true;
     buildBtn();
 }
 
@@ -388,7 +388,7 @@ void ButtonR::setFontSize(float fontSize)
 void ButtonR::setFontSizeNoResize(float fontSize)
 {
     this->fontSize = fontSize;
-    resizeBtn = false;
+    txtResizeBtn = false;
     buildBtn();
 }
 
@@ -403,7 +403,7 @@ void ButtonR::setFontSizeNoResize(float fontSize)
 void ButtonR::setText(string text) 
 {
     this->text = text;
-    resizeBtn = true;
+    txtResizeBtn = true;
     buildBtn();
 }
 
@@ -418,7 +418,7 @@ void ButtonR::setText(string text)
 void ButtonR::setTextNoResize(string text) 
 {
     this->text = text;
-    resizeBtn = false;
+    txtResizeBtn = false;
     buildBtn();
 }
 
@@ -446,6 +446,20 @@ void ButtonR::setBtnPosition(float btnX, float btnY)
 {
     rect.x = btnX;
     rect.y = btnY;
+    buildBtn();
+}
+
+//--------------------------------------------------------------------- Method setBtnSize()
+/*----------------------------------------------------
+
+     Sets the button position in the screen
+
+ -----------------------------------------------------*/
+void ButtonR::setBtnSize(float btnWidth, float btnHeight)
+{
+    rect.width = btnWidth;
+    rect.height = btnHeight;
+    txtResizeBtn = false;
     buildBtn();
 }
 
