@@ -237,6 +237,15 @@ public:
      ----------------------------------------------------*/
     ButtonR(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor, Color borderColor);
 
+    /*---------------------------------------------------
+
+        constructor-9
+        - loaded font
+        text, font, font size
+
+     ----------------------------------------------------*/
+    ButtonR(string text, Font &font, float fontSize);
+
 
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -345,8 +354,7 @@ private:
     // Classe Operation Functions (private)
     //---------------------------------------------------------------------------------
 
-    
-
+  
     
 };
 #endif

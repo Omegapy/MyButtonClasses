@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------****************************************----------------------------------
 |                                *                                      *                                 |
-|  Program Buttons               *       BottonO Class Declarations     *                                 |
+|  Program Buttons               *        MenuR Class Declarations      *                                 |
 |                                *                                      *                                 |
 ---------------------------------****************************************----------------------------------*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -10,30 +10,40 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 
-    The ButtonO class creates a rounded edges rectangle shaped static-size button, 
-    window-resized-not-responsive button.
+    The MenuR class creates rectangle-shaped static-size menu objects,
+    window-resized-not-responsive menus.
 
-    The button size is computed from the font size and length of the text;
-    the text is automatically centered on the button.
-    See mutators to modify the buttonâ€™s position, the textâ€™s position in the button, and the buttonâ€™s size.
+    The menu object can contain one menu bar or several menu bars,
+    the menu can be automatically positioned on the left, center, or right side of the screen.
+    See mutators to modify the menu position.
 
-    The button's border can be turned on and off.
-    the border's size is computed from the font size and length of the text;
-    modifying the button's size will also modify the border's size.
+    The bars’ sizes are computed from the font size and length of the text longest bar text;
+    the texts can be positioned on the left, center, or right side of the bars.
+    See mutators to modify each individual bar position, the text’s position in each individual bar, 
+    and the each individual bar’s size.
 
-    The button's shadow can be turned on and off.
-    The shadow size is computed from the font size and length of the text;
-    modifying the button's size will also modify the shadow's size.
+    The bars’ borders can be turned on and off.
+    The sizes of the borders are computed from the font size and length of the bar text longest;
+    modifying the bars’ sizes will also modify the borders’ sizes.
+
+    The button's shadows can be turned on and off.
+    The sizes of the shadows are computed from the font size and length of the bar text longest;
+    modifying the bars’ sizes will also modify the shadows’ sizes.
 
     The default font is raylib font.
-      
-    Child class of ButtonR class
+
+    The menu bars are created untilizing the ButtonR class
+
+    Requirement
+    c and c++ 20 or later
+    Raylib library: https://www.raylib.com
+    ButtonR Class
 
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef BUTTON_O_HPP
-#define BUTTON_O_HPP
+#ifndef MENU_R_HPP
+#define MENU_R_HPP
 
 #ifdef _MSC_VER
 #pragma once
@@ -41,7 +51,13 @@
 
 #include "ButtonR.hpp"
 
-class ButtonO : public ButtonR 
+// Menu position
+const enum MENU_POSITION { CENTER = 0, CENTER_TOP, CENTER_BOTTOM, LEFT, LEFT_TOP, LEFT_BOTTOM, RIGHT, RIGHT_TOP, RIGHT_BOTTOM, NONE };
+// Texts postion in bars
+const enum TEXT_POSITION { TXT_CENTER = 0, TXT_LEFT, TXT_RIGHT, TXT_NONE };
+
+
+class MenuR 
 {
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -49,7 +65,7 @@ class ButtonO : public ButtonR
     // variables (Private)
     //----------------------------------------------------------------------------------
 
-    
+
 
 
 public:
@@ -60,8 +76,30 @@ public:
     // variables (Public)
     //----------------------------------------------------------------------------------
     
-    // Button rectangle rounded edges outline
-    float roundness = 1.0f;
+    //---- Menu
+    float menuWidth = 0.0f,
+          menuHeight = 0.0f,
+          menuX = 0.0f,
+          menuY = 0.0f;
+    // Menu position
+    unsigned menuPos = CENTER;
+
+    //---- Menu bars
+    unsigned numBars = 0;
+    vector<ButtonR> bars;
+    float barSpacing = 50.0f,
+          barsHeight = 0.0f,
+          barsWidth = 0.0f;
+    
+    //---- Menu texts
+    vector<string> texts;
+    // Texts postion in bars
+    unsigned textsPos = TXT_LEFT;
+    // font
+    Font font;
+    float fontSize = 0.0f;
+    bool isRayFont = true;
+    
 
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -72,41 +110,41 @@ public:
 
     /*---------------------------------------------------
 
-        Default construtor (empty)
+        Default construtor 
         - raylib default font
 
      ----------------------------------------------------*/
-    ButtonO();
+    MenuR();
 
     /*---------------------------------------------------
 
         Constructor-1
         - raylib default font
-        text, position
+        texts
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y);
+    MenuR(vector<string> texts);
 
     /*------------------------------------------------------------
 
         Constructor-2
         - raylib default font
-        text, position, font size
+        texts, menu position
 
-        Note: the font size will modify the size of the button
+        CENTER, CENTER_TOP, CENTER_BOTTOM, 
+        LEFT, LEFT_TOP, LEFT_BOTTOM, 
+        RIGHT, RIGHT_TOP, RIGHT_BOTTOM
 
      -------------------------------------------------------------*/
-    ButtonO(string text, float x, float y, float fontSize);
+    MenuR(vector<string> texts, unsigned menuPos);
 
     /*---------------------------------------------------
 
         Constructor-3
-        - raylib default font
-        text, position, font size, font color,
-        button color
+        texts, font
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, float fontSize, Color fontColor, Color btnColor);
+    MenuR(vector<string> texts, Font &font, float fontSize);
 
     /*---------------------------------------------------
 
@@ -116,7 +154,7 @@ public:
         button color, border color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, float fontSize, Color fontColor, Color btnColor, Color borderColor);
+    MenuR(string text, float x, float y, float fontSize, Color fontColor, Color btnColor, Color borderColor);
 
     /*---------------------------------------------------
 
@@ -125,7 +163,7 @@ public:
         text, position, font
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font);
+    MenuR(string text, float x, float y, Font &font);
 
     /*---------------------------------------------------
 
@@ -134,7 +172,7 @@ public:
         text, position, font, font size
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font, float fontSize);
+    MenuR(string text, float x, float y, Font &font, float fontSize);
 
     /*---------------------------------------------------
 
@@ -144,7 +182,7 @@ public:
         button color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor);
+    MenuR(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor);
 
     /*---------------------------------------------------
 
@@ -154,16 +192,9 @@ public:
         button color, border color
 
      ----------------------------------------------------*/
-    ButtonO(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor, Color borderColor);
+    MenuR(string text, float x, float y, Font &font, float fontSize, Color fontColor, Color btnColor, Color borderColor);
 
-    /*---------------------------------------------------
 
-        constructor-9
-        - loaded font
-        text, font, font size
-
-     ----------------------------------------------------*/
-    ButtonO(string text, Font &font, float fontSize);
 
 
     //----------------------------------------------------------------------------------
@@ -187,12 +218,15 @@ public:
     // Mutators Methods
     //---------------------------------------------------------------------------------
 
-    /*----------------------------------------------------
 
-        Updates button
+    /*----------------------------------------------------------
 
-     -----------------------------------------------------*/
-    //int update();
+        Builds the Menu,
+        computes size from the font size and length of the texts
+
+     -----------------------------------------------------------*/
+    void buildMenu();
+
 
 private:
 
