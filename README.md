@@ -99,13 +99,10 @@ Example button image:
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-Links:
-
+Links:  
 Project GitHub: https://github.com/Omegapy/MyButtonClasses  
 GitHub: https://github.com/Omegapy  
-
-YouTube: https://www.youtube.com/watch?v=I_9yhN82opo&t=17 
-
+YouTube: https://www.youtube.com/watch?v=I_9yhN82opo&t=17   
 Facebook: https://www.facebook.com/profile.php?id=100089638857137  
 Twitter: https://twitter.com/RicciardiAlex
 
