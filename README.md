@@ -91,17 +91,21 @@ ButtonP button;
 
 Link: <a href='https://github.com/Omegapy/MyButtonClasses/wiki/Image-How-To-ButtonP-Class'>Image How To ButtonP Class</a>
 
-
------------------------------------------------------------------------------------------------------------------------------
-
-Links  :  
-Project GitHub: https://github.com/Omegapy/MyButtonClasses  
-GitHub: https://github.com/Omegapy  
-YouTube: https://www.youtube.com/watch?v=I_9yhN82opo&t=17 
-
 -----------------------------------------------------------------------------------------------------------------------------
 Credits:
 
 Example button image:  
 <a href='https://pngtree.com/so/icons'>icons png from pngtree.com</a>
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Links:
+
+Project GitHub: https://github.com/Omegapy/MyButtonClasses  
+GitHub: https://github.com/Omegapy  
+
+YouTube: https://www.youtube.com/watch?v=I_9yhN82opo&t=17 
+
+Facebook: https://www.facebook.com/profile.php?id=100089638857137  
+Twitter: https://twitter.com/RicciardiAlex
 
